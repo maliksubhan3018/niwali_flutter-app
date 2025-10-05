@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:niwali_app/config/route_name.dart';
 import 'package:niwali_app/widgets/image_widget.dart';
 import 'package:niwali_app/widgets/splash_widget.dart';
 
@@ -14,10 +16,9 @@ class Splash3 extends StatelessWidget {
       bodyText:
           "Lorem ipsum dolor sit amet, consectetur adipiscing\n elit, sed do eiusmod tempor incididunt ut labore et \ndolore magna aliqua.",
       onSkip: () {
-        print('Skip pressed');
-      },
+Get.toNamed(MyPagesName.login);      },
       onNext: () {
-        print('Next pressed');
+Get.toNamed(MyPagesName.login);        
       },
     );
   }
