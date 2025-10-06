@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:niwali_app/widgets/app_bar.dart';
 import 'package:niwali_app/widgets/image_widget.dart';
 
 class TermsConditions extends StatelessWidget {
@@ -7,6 +8,7 @@ class TermsConditions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       appBar: const AppBarWidget(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16.0),

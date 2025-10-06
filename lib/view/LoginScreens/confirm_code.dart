@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:niwali_app/widgets/app_bar.dart';
 import 'package:niwali_app/widgets/color_widget.dart';
 import 'package:niwali_app/widgets/custom_button.dart';
 import 'package:niwali_app/widgets/image_widget.dart';
@@ -10,6 +11,7 @@ class ConfirmCode extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.greenLight,
+       appBar: const AppBarWidget(),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(

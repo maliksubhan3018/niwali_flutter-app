@@ -5,6 +5,9 @@ import 'package:niwali_app/view/LoginScreens/forgot_password.dart';
 import 'package:niwali_app/view/LoginScreens/login.dart';
 import 'package:niwali_app/view/SignupScreens/signup.dart';
 import 'package:niwali_app/view/SignupScreens/terms.dart';
+import 'package:niwali_app/view/homescreens/home.dart';
+import 'package:niwali_app/view/homescreens/notifications.dart';
+import 'package:niwali_app/view/homescreens/product.dart';
 
 import 'package:niwali_app/view/splashscreens/splash.dart';
 import 'package:niwali_app/view/splashscreens/splash1.dart';
@@ -23,9 +26,9 @@ class AppRoutes {
     GetPage(name: MyPagesName.termsconditions, page: () => TermsConditions()),
       GetPage(name: MyPagesName.forgotpassword, page: () => ForgotPassword()),
      GetPage(name: MyPagesName.confirmcode, page: () => ConfirmCode()),
-    //    GetPage(name: MyPagesName.checkout2, page: () => Checkout2()),
-    //     GetPage(name: MyPagesName.checkout3, page: () => Checkout3()),
-    //      GetPage(name: MyPagesName.favorites1, page: () => Favorites1()),
+       GetPage(name: MyPagesName.home, page: () => Home()),
+        GetPage(name: MyPagesName.notifications, page: () => Notifications()),
+          GetPage(name: MyPagesName.product, page: () => Product()),
     //       GetPage(name: MyPagesName.favorites2, page: () => Favorites2()),
     //       GetPage(name: MyPagesName.orderdetails, page: () => OrderDetails()),
       

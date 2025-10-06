@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:niwali_app/config/route.dart';
 import 'package:niwali_app/config/route_name.dart';
-//import 'package:niwali_app/view/LoginScreens/login.dart';
-import 'package:niwali_app/widgets/color_widget.dart'; // if you have AppColors defined here
+
+import 'package:niwali_app/widgets/color_widget.dart';
 
 void main() {
   runApp(const MyApp());

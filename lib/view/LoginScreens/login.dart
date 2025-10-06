@@ -5,6 +5,7 @@ import 'package:niwali_app/widgets/color_widget.dart';
 import 'package:niwali_app/widgets/custom_button.dart';
 import 'package:niwali_app/widgets/custom_textfield.dart';
 import 'package:niwali_app/widgets/image_widget.dart';
+import 'package:niwali_app/widgets/app_bar.dart'; // ✅ import your AppBar file
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -22,33 +23,24 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.greenLight,
+
+      // ✅ Flutter built-in AppBar (customized via your widget)
+      appBar: const AppBarWidget(),
+
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: Form(
-            key: _formKey, // ✅ form key added
+            key: _formKey, 
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Logo
                 Image.asset(MyImages.niwalilogowhite, height: 50, width: 250),
                 const SizedBox(height: 48.0),
 
-                // Title
-                const Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    'Login',
-                    style: TextStyle(
-                      fontSize: 28.0,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 10.0),
-
-                // Name Field
+                // Removed hardcoded “Login” title here,
+                // because AppBar already shows it dynamically.
+                
                 CustomTextField(
                   labelText: 'Name',
                   icon: Icons.person,
@@ -62,7 +54,6 @@ class _LoginState extends State<Login> {
                 ),
                 const SizedBox(height: 16.0),
 
-                // Password Field
                 CustomTextField(
                   labelText: 'Password',
                   icon: Icons.lock,
@@ -79,15 +70,11 @@ class _LoginState extends State<Login> {
                 ),
                 const SizedBox(height: 2),
 
-                // Forgot Password Link
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
                     onPressed: () {
-                       Get.toNamed(
-                          MyPagesName.forgotpassword,
-                        );
-                      // Handle forgot password
+                      Get.toNamed(MyPagesName.forgotpassword);
                     },
                     child: const Text(
                       'Forgot Password?',
@@ -100,23 +87,20 @@ class _LoginState extends State<Login> {
                 ),
                 const SizedBox(height: 18),
 
-                // Login Button
                 CustomButton(
                   text: 'Login',
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      print("my name");
-                      // ✅ Only runs if validation passes
-                      // ScaffoldMessenger.of(context).showSnackBar(
-                      // const SnackBar(content: Text('Login successful!')),
-                      // );
+                      Get.toNamed(MyPagesName.home);
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text('Login successful!')),
+                      );
                     }
                   },
                 ),
 
                 const SizedBox(height: 16.0),
 
-                // Sign Up Link
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -126,13 +110,11 @@ class _LoginState extends State<Login> {
                     ),
                     TextButton(
                       style: TextButton.styleFrom(
-                        padding: EdgeInsets.all(2),
-                        minimumSize: Size(0, 0),
+                        padding: const EdgeInsets.all(2),
+                        minimumSize: const Size(0, 0),
                       ),
                       onPressed: () {
-                        Get.toNamed(
-                          MyPagesName.signup,
-                        ); // ✅ navigate to Sign Up page
+                        Get.toNamed(MyPagesName.signup);
                       },
                       child: const Text(
                         'Sign Up',

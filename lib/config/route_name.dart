@@ -8,6 +8,7 @@ class MyPagesName {
    static const String confirmcode = "/ConfirmCode";
    static const String signup = "/Signup";
    static const String termsconditions = "/TermsConditions";
-   //static const String favorites2 = "/Favorites2";
-  // static const String orderdetails= "/OrderDetails";
+   static const String home = "/Home";
+   static const String notifications= "/Notifications";
+   static const String product= "/Product";
 }

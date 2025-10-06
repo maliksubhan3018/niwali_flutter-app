@@ -1,5 +1,6 @@
 // lib/widgets/splash_content.dart
 import 'package:flutter/material.dart';
+import 'package:niwali_app/widgets/color_widget.dart';
 
 class SplashContent extends StatelessWidget {
   final String imagePath;
@@ -26,12 +27,12 @@ class SplashContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
-    final containerHeight = screenHeight / 2; // Adjusted for equal heights with space for content and buttons
+    final containerHeight = screenHeight / 2;
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          // Upper container: White background with image, rounded bottom right
+         
           SizedBox(
             height: containerHeight,
             child: Container(
@@ -52,7 +53,7 @@ class SplashContent extends StatelessWidget {
               ),
             ),
           ),
-          // Below container: Green background with text and buttons, rounded top left
+         
           SizedBox(
             height: containerHeight,
             child: Container(
@@ -68,7 +69,7 @@ class SplashContent extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  // Content group: Heading, body, and dots centered
+                
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -104,7 +105,7 @@ class SplashContent extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 24.0),
-                  // Buttons inside the green container
+                 
                   if (showSkip) ...[
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -123,7 +124,7 @@ class SplashContent extends StatelessWidget {
                         ElevatedButton(
                           onPressed: onNext,
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFF1EAB70),
+                            backgroundColor: AppColors.greenDark,
                             foregroundColor: Colors.white,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8.0),
