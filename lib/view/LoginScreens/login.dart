@@ -25,7 +25,7 @@ class _LoginState extends State<Login> {
       backgroundColor: AppColors.greenLight,
 
       // ✅ Flutter built-in AppBar (customized via your widget)
-      appBar: const AppBarWidget(),
+      appBar: const AppBarWidget( title: "Login",),
 
       body: SafeArea(
         child: Padding(

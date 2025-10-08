@@ -121,6 +121,7 @@ class Product extends StatelessWidget {
                     // Button and quantity row
                     Container(
                       height: 50,
+                      width: double.infinity,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
                         color: AppColors.greenLight,
@@ -128,21 +129,21 @@ class Product extends StatelessWidget {
                       child: Row(
                         //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: const [ 
-                          SizedBox(width: 20,),
+                          SizedBox(width: 10,),
                           Icon(Icons.shopping_bag_outlined, color: Colors.white),
-                          SizedBox(width: 10),
+                          SizedBox(width: 5),
                           Text(
                             'View items',
                             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                           ),
-                          SizedBox(width: 100),
+                          SizedBox(width: 50),
                           Icon(Icons.remove_circle_outline, color: Colors.white),
-                          SizedBox(width: 40),
+                          SizedBox(width: 10), 
                           Text(
                             '1',
                             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                           ),
-                          SizedBox(width: 50),
+                          SizedBox(width: 20),
                           Icon(Icons.add_circle_outline, color: Colors.white),
                         ],
                       ),

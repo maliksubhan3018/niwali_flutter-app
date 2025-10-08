@@ -28,7 +28,7 @@ class GridHomeWidget extends StatelessWidget {
         Get.toNamed(MyPagesName.product);
       },
       child: Container(
-        margin: const EdgeInsets.all(8.0),
+        // margin: const EdgeInsets.all(8.0),
         padding: const EdgeInsets.all(12.0),
         decoration: BoxDecoration(
           color: AppColors.greenLight,

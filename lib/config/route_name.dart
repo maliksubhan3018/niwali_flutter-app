@@ -10,5 +10,7 @@ class MyPagesName {
    static const String termsconditions = "/TermsConditions";
    static const String home = "/Home";
    static const String notifications= "/Notifications";
+   static const String profile= "/Profile";
+   static const String Cart= "/Cart";
    static const String product= "/Product";
 }

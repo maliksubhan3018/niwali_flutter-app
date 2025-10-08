@@ -31,7 +31,7 @@ class _SignupState extends State<Signup> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.greenLight,
-       appBar: const AppBarWidget(),
+       appBar: const AppBarWidget( title: "Sign up",),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),

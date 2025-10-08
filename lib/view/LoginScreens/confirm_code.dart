@@ -11,7 +11,7 @@ class ConfirmCode extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.greenLight,
-       appBar: const AppBarWidget(),
+       appBar: const AppBarWidget(title: "Verify",),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
