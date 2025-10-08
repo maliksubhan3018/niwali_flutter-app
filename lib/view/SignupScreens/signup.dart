@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:niwali_app/config/route_name.dart';
 import 'package:niwali_app/widgets/app_bar.dart';
 import 'package:niwali_app/widgets/color_widget.dart';
-import 'package:niwali_app/widgets/custom_textfield.dart';
+import 'package:niwali_app/widgets/custom_text_form_field.dart';
 import 'package:niwali_app/widgets/image_widget.dart';
 import 'package:niwali_app/widgets/custom_button.dart';
 

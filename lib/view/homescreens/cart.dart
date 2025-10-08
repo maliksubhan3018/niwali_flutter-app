@@ -1,18 +1,21 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:niwali_app/config/route_name.dart';
+import 'package:niwali_app/widgets/app_bar.dart';
 import 'package:niwali_app/widgets/image_widget.dart';
-import 'package:niwali_app/widgets/widget_cart.dart'; // Assuming this contains CartItemWidget
+import 'package:niwali_app/widgets/widget_cart.dart';
 import 'package:niwali_app/widgets/color_widget.dart';
-import 'package:niwali_app/widgets/custom_button.dart'; // Assuming this contains CustomButton
+import 'package:niwali_app/widgets/custom_button.dart';
 
 class Cart extends StatelessWidget {
   const Cart({super.key});
 
   @override
   Widget build(BuildContext context) {
-    int totalItems = 5; // Total number of items (counting CartItemWidgets)
-    double totalAmount = 2450.00; // Sum of prices: 1050 + 350 + 350 + 350 + 350
-
     return Scaffold(
+      //appBar: const AppBarWidget( title: "cart",),
       body: Padding(
         padding: const EdgeInsets.all(8),
         child: Column(
@@ -59,50 +62,69 @@ class Cart extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                padding: const EdgeInsets.all(12.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    // First Row (Total Items)
+                    Row(
                       children: [
                         Text(
-                          'Total Items $totalItems',
+                          "Total Items 12",
                           style: TextStyle(
                             color: AppColors.white,
-                            fontSize: 16,
-                          ),
-                        ),
-                        const SizedBox(height: 5),
-                        const Divider(color: Colors.white, thickness: 1),
-                        const SizedBox(height: 5),
-                        Text(
-                          'Total Amount',
-                          style: TextStyle(
-                            color: AppColors.white,
-                            fontSize: 16,
-                          ),
-                        ),
-                        Text(
-                          '\$${totalAmount.toStringAsFixed(2)}',
-                          style: TextStyle(
-                            color: AppColors.white,
-                            fontSize: 16,
+                            fontSize: 12,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(
-                      width: 120, // Adjust width to fit the button as per image
-                      child: CustomButton(
-                        text: 'Checkout',
-                        onPressed: () {
-                          // Add checkout functionality here
-                        },
-                        isPrimary: true,
-                      ),
+
+                    const SizedBox(height: 8),
+                    Divider(color: Colors.white.withOpacity(0.5), thickness: 1),
+
+                    const SizedBox(height: 8),
+
+                    // Second Row (Total Amount + Checkout)
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text(
+                              "Total Amount",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(height: 4),
+                            Text(
+                              "\$3000.00",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+
+                        SizedBox(
+                          width: 150,
+                          child: CustomButton(
+                            text: "Checkout →",
+                            onPressed: () {
+                               Get.toNamed(MyPagesName.adress);
+                            },
+                          ),
+                        ),
+                      ],
                     ),
+
+                    SizedBox(height: 16),
                   ],
                 ),
               ),

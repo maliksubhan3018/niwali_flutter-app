@@ -76,7 +76,7 @@ class CartItemWidget extends StatelessWidget {
                 child: IconButton(
                   icon: const Icon(Icons.delete_outline, color: Colors.white, size: 20),
                   onPressed: () {
-                    // Add delete functionality here
+                   
                   },
                   style: IconButton.styleFrom(
                     shape: const CircleBorder(),
@@ -88,34 +88,37 @@ class CartItemWidget extends StatelessWidget {
               ),
               const SizedBox(height: 15),
               Row(
-                children: [
-                  IconButton(
-                    icon: const Icon(Icons.remove, color: AppColors.greenDark, size: 20),
-                    onPressed: () {},
-                    style: IconButton.styleFrom(
-                      shape: const CircleBorder(),
-                      padding: const EdgeInsets.all(2), // Reduced padding for smaller background
-                      backgroundColor: AppColors.white,
-                    ),
-                  ),
-                  const SizedBox(width: 3),
-                  Text(
-                    '$quantity',
-                    style: TextStyle(color: AppColors.white),
-                  ),
-                  const SizedBox(width: 3),
-                  IconButton(
-                    icon: const Icon(Icons.add, color: AppColors.greenLight, size: 20),
-                    onPressed: () {},
-                    style: IconButton.styleFrom(
-                      shape: const CircleBorder(),
-                      padding: const EdgeInsets.all(2), // Reduced padding for smaller background
-                      backgroundColor: AppColors.white,
-                    ),
-                  ),
-                  SizedBox(width: 5,),
-                ],
-              ),
+  children: [
+    IconButton(
+      icon: const Icon(Icons.remove, color: AppColors.greenDark, size: 14),
+      onPressed: () {},
+      style: IconButton.styleFrom(
+        shape: const CircleBorder(),
+        padding: const EdgeInsets.all(2),
+        minimumSize: const Size(24, 24), // 👈 reduce default 48x48
+        backgroundColor: AppColors.white,
+      ),
+    ),
+    const SizedBox(width: 3),
+    Text(
+      '$quantity',
+      style: const TextStyle(color: AppColors.white),
+    ),
+    const SizedBox(width: 3),
+    IconButton(
+      icon: const Icon(Icons.add, color: AppColors.greenLight, size: 14),
+      onPressed: () {},
+      style: IconButton.styleFrom(
+        shape: const CircleBorder(),
+        padding: const EdgeInsets.all(2),
+        minimumSize: const Size(24, 24), // 👈 same fix here
+        backgroundColor: AppColors.white,
+      ),
+    ),
+    SizedBox(width: 10,)
+  ],
+)
+
             ],
           ),
         ],

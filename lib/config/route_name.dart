@@ -9,7 +9,7 @@ class MyPagesName {
    static const String signup = "/Signup";
    static const String termsconditions = "/TermsConditions";
    static const String home = "/Home";
-   static const String notifications= "/Notifications";
+   static const String adress= "/Adress";
    static const String profile= "/Profile";
    static const String Cart= "/Cart";
    static const String product= "/Product";
