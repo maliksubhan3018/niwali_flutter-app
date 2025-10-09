@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:niwali_app/view/homescreens/cart.dart';
 import 'package:niwali_app/view/homescreens/custom_bottom_navbar.dart';
 import 'package:niwali_app/view/homescreens/notifications.dart';
+import 'package:niwali_app/view/homescreens/profile.dart';
 import 'package:niwali_app/widgets/app_bar.dart';
 import 'package:niwali_app/widgets/color_widget.dart';
 import 'package:niwali_app/widgets/image_widget.dart';
 import 'package:niwali_app/widgets/list_home_widget.dart';
 import 'package:niwali_app/widgets/grid_home_widget.dart';
-
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -48,25 +48,29 @@ class _HomeState extends State<Home> {
       'price': '\$850',
       'imagePath': MyImages.product1,
       'quantity': null,
-    },{
+    },
+    {
       'name': 'Aloe',
       'description': 'Agung Suka Family',
       'price': '\$850',
       'imagePath': MyImages.product1,
       'quantity': 3,
-    },{
+    },
+    {
       'name': 'Aloe',
       'description': 'Agung Suka Family',
       'price': '\$850',
       'imagePath': MyImages.product1,
       'quantity': null,
-    },{
+    },
+    {
       'name': 'Aloe',
       'description': 'Agung Suka Family',
       'price': '\$850',
       'imagePath': MyImages.product1,
       'quantity': null,
-    },{
+    },
+    {
       'name': 'Aloe',
       'description': 'Agung Suka Family',
       'price': '\$850',
@@ -90,7 +94,7 @@ class _HomeState extends State<Home> {
     }
   }
 
-  Widget _buildHomeBody() {
+  Widget buildHomeBody() {
     return Column(
       children: [
         Container(
@@ -120,20 +124,24 @@ class _HomeState extends State<Home> {
                         const SnackBar(content: Text('Favorites toggled')),
                       );
                     },
-                    icon: const Icon(Icons.favorite_border,
-                        color: AppColors.greenDark),
+                    icon: const Icon(
+                      Icons.favorite_border,
+                      color: AppColors.greenDark,
+                    ),
                   ),
                   IconButton(
                     onPressed: () => setState(() => isGridView = true),
-                    icon: Icon(Icons.grid_view,
-                        color:
-                            isGridView ? AppColors.greenDark : Colors.grey),
+                    icon: Icon(
+                      Icons.grid_view,
+                      color: isGridView ? AppColors.greenDark : Colors.grey,
+                    ),
                   ),
                   IconButton(
                     onPressed: () => setState(() => isGridView = false),
-                    icon: Icon(Icons.list,
-                        color:
-                            !isGridView ? AppColors.greenDark : Colors.grey),
+                    icon: Icon(
+                      Icons.list,
+                      color: !isGridView ? AppColors.greenDark : Colors.grey,
+                    ),
                   ),
                 ],
               ),
@@ -144,8 +152,7 @@ class _HomeState extends State<Home> {
           child: isGridView
               ? GridView.builder(
                   padding: const EdgeInsets.symmetric(horizontal: 8),
-                  gridDelegate:
-                      const SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     childAspectRatio: 0.7,
                     crossAxisSpacing: 8,
@@ -189,15 +196,14 @@ class _HomeState extends State<Home> {
       body: IndexedStack(
         index: _currentIndex,
         children: [
-          _buildHomeBody(),
+         buildHomeBody(),
           //const Center(child: Text('Cart Page')),
           const Cart(),
           const Notifications(),
-          const Center(child: Text('Profile Page')),
+          const Profile(),
         ],
       ),
-      bottomNavigationBar: CustomBottomNavBar
-      (
+      bottomNavigationBar: CustomBottomNavBar(
         currentIndex: _currentIndex,
         onTap: (index) => setState(() => _currentIndex = index),
       ),

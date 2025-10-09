@@ -15,4 +15,7 @@ class MyPagesName {
    static const String product= "/Product";
    static const String newcard= "/NewCard";
    static const String order= "/Order";
+   static const String personalinfo= "/PersonalInfo";
+   static const String language= "/Language";
+   static const String orderhistory= "/OrderHistory";
 }

@@ -5,12 +5,16 @@ class CustomField extends StatelessWidget {
   final String labelText;
   final TextEditingController controller;
   final bool isNumeric;
+  final bool obscureText;
+  final Widget? suffixIcon;
 
   const CustomField({
     super.key,
     required this.labelText,
     required this.controller,
     this.isNumeric = false,
+    this.obscureText = false,
+    this.suffixIcon,
   });
 
   @override
@@ -20,20 +24,22 @@ class CustomField extends StatelessWidget {
       children: [
         Text(
           labelText,
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         TextField(
           controller: controller,
           keyboardType: isNumeric ? TextInputType.number : TextInputType.text,
-          style: TextStyle(color: Colors.white),
+          obscureText: obscureText,
+          style: const TextStyle(color: Colors.white),
           decoration: InputDecoration(
             border: InputBorder.none,
             filled: true,
             fillColor: AppColors.greenLight,
             hintText: isNumeric ? 'Enter number' : 'Enter text',
             hintStyle: TextStyle(color: Colors.white70),
-            contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 0),
+            contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
+            suffixIcon: suffixIcon,
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
               borderSide: BorderSide.none,
@@ -41,7 +47,7 @@ class CustomField extends StatelessWidget {
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
               borderSide: BorderSide.none,
-           ),
+            ),
           ),
         ),
       ],
