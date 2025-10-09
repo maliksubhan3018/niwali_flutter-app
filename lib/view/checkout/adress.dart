@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:niwali_app/config/route_name.dart';
 import 'package:niwali_app/widgets/app_bar.dart';
 import 'package:niwali_app/widgets/color_widget.dart';
 import 'package:niwali_app/widgets/custom_button.dart';
@@ -87,7 +89,9 @@ class Adress extends StatelessWidget {
            SizedBox(height: 80,),
             CustomButton(
               text: 'Proceed',
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(MyPagesName.paymentcard);
+              },
               
             ),
           ],

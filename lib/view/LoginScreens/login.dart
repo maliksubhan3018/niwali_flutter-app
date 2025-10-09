@@ -5,7 +5,7 @@ import 'package:niwali_app/widgets/color_widget.dart';
 import 'package:niwali_app/widgets/custom_button.dart';
 import 'package:niwali_app/widgets/custom_text_form_field.dart';
 import 'package:niwali_app/widgets/image_widget.dart';
-import 'package:niwali_app/widgets/app_bar.dart'; // ✅ import your AppBar file
+import 'package:niwali_app/widgets/app_bar.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -24,22 +24,21 @@ class _LoginState extends State<Login> {
     return Scaffold(
       backgroundColor: AppColors.greenLight,
 
-      // ✅ Flutter built-in AppBar (customized via your widget)
-      appBar: const AppBarWidget( title: "Login",),
+      
+      appBar:  AppBarWidget( title: "Login",),
 
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding:  EdgeInsets.all(24.0),
           child: Form(
             key: _formKey, 
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(MyImages.niwalilogowhite, height: 50, width: 250),
-                const SizedBox(height: 48.0),
+                 SizedBox(height: 48.0),
 
-                // Removed hardcoded “Login” title here,
-                // because AppBar already shows it dynamically.
+               
                 
                 CustomTextField(
                   labelText: 'Name',
@@ -99,12 +98,12 @@ class _LoginState extends State<Login> {
                   },
                 ),
 
-                const SizedBox(height: 16.0),
+                 SizedBox(height: 16),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
+                     Text(
                       'Already have an Account?',
                       style: TextStyle(color: Colors.white),
                     ),

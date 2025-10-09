@@ -7,4 +7,5 @@ class MyImages {
   static const String niwalilogowhite = 'assets/project_images/niwali logo (1).png';
   static const String product1 = 'assets/project_images/Rectangle 8917.png';
   static const String banner = 'assets/project_images/image 105.png';
+  static const String card = 'assets/project_images/Card 1.png';
 }

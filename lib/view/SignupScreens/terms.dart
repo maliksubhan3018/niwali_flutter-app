@@ -8,10 +8,10 @@ class TermsConditions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: const AppBarWidget(),
+       appBar: const AppBarWidget(title: "Terms & Conditions",),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding:  EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -19,9 +19,9 @@ class TermsConditions extends StatelessWidget {
                 MyImages.niwalilogo,
                 height: 100,
               ),
-              const SizedBox(height: 20),
+               SizedBox(height: 15),
               Align(alignment: AlignmentGeometry.topLeft,
-                child: const Text(
+                child:  Text(
                   'Terms:',
                   style: TextStyle(
                     fontSize: 24,
@@ -29,9 +29,8 @@ class TermsConditions extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
+               SizedBox(height: 10),
         
-              // 🔹 Use the bullet builder here
               buildBulletText(
                 'Niwali is a reliable supplier of a wide range of health and nutritional supplements.',
               ),
@@ -54,12 +53,11 @@ class TermsConditions extends StatelessWidget {
     );
   }
 
-  // ✅ Helper for consistent bullets
   Widget buildBulletText(String text) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
+         Text(
           "• ",
           style: TextStyle(fontSize: 18, height: 1.5),
         ),

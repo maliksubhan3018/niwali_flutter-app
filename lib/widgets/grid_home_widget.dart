@@ -28,17 +28,16 @@ class GridHomeWidget extends StatelessWidget {
         Get.toNamed(MyPagesName.product);
       },
       child: Container(
-        // margin: const EdgeInsets.all(8.0),
-        padding: const EdgeInsets.all(12.0),
+        padding: EdgeInsets.all(12),
         decoration: BoxDecoration(
           color: AppColors.greenLight,
-          borderRadius: BorderRadius.circular(12.0),
+          borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.1),
               spreadRadius: 1,
               blurRadius: 4,
-              offset: const Offset(0, 2),
+              offset: Offset(0, 2),
             ),
           ],
         ),
@@ -52,9 +51,9 @@ class GridHomeWidget extends StatelessWidget {
                   children: [
                     Container(
                       width: double.infinity,
-                      height: 120.0,
+                      height: 120,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.0),
+                        borderRadius: BorderRadius.circular(8),
                         image: DecorationImage(
                           image: AssetImage(imagePath),
                           fit: BoxFit.cover,
@@ -65,7 +64,7 @@ class GridHomeWidget extends StatelessWidget {
                       top: 4.0,
                       right: 4.0,
                       child: Container(
-                        padding: const EdgeInsets.all(4.0),
+                        padding: EdgeInsets.all(4.0),
                         decoration: BoxDecoration(
                           color: Colors.white.withOpacity(0.8),
                           shape: BoxShape.circle,
@@ -73,13 +72,13 @@ class GridHomeWidget extends StatelessWidget {
                         child: Icon(
                           Icons.favorite,
                           color: AppColors.greenLight,
-                          size: 16.0,
+                          size: 16,
                         ),
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(height: 12.0),
+                SizedBox(height: 12),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -94,21 +93,18 @@ class GridHomeWidget extends StatelessWidget {
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      const SizedBox(height: 4.0),
+                      SizedBox(height: 4),
                       Text(
                         description,
-                        style: const TextStyle(
-                          fontSize: 12.0,
-                          color: Colors.white,
-                        ),
+                        style: TextStyle(fontSize: 12, color: Colors.white),
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      const SizedBox(height: 4.0),
+                      SizedBox(height: 4),
                       Text(
                         price,
-                        style: const TextStyle(
-                          fontSize: 12.0,
+                        style: TextStyle(
+                          fontSize: 12,
                           fontWeight: FontWeight.w600,
                           color: Colors.white,
                         ),
@@ -122,11 +118,11 @@ class GridHomeWidget extends StatelessWidget {
               bottom: -12,
               right: -12,
               child: Container(
-                width: 40.0,
-                height: 40.0,
+                width: 40,
+                height: 40,
                 decoration: BoxDecoration(
                   color: AppColors.greenDark,
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
                     bottomLeft: Radius.circular(30),
                   ),
@@ -134,7 +130,7 @@ class GridHomeWidget extends StatelessWidget {
                     BoxShadow(
                       color: Colors.black.withOpacity(0.2),
                       blurRadius: 4,
-                      offset: const Offset(0, 2),
+                      offset: Offset(0, 2),
                     ),
                   ],
                 ),
@@ -142,18 +138,14 @@ class GridHomeWidget extends StatelessWidget {
                     ? Center(
                         child: Text(
                           '+${quantity!}',
-                          style: const TextStyle(
+                          style: TextStyle(
                             color: Colors.white,
-                            fontSize: 14.0,
+                            fontSize: 14,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                       )
-                    : const Icon(
-                        Icons.shopping_bag,
-                        color: Colors.white,
-                        size: 20.0,
-                      ),
+                    : Icon(Icons.shopping_bag, color: Colors.white, size: 20),
               ),
             ),
           ],

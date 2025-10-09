@@ -6,6 +6,9 @@ import 'package:niwali_app/view/LoginScreens/login.dart';
 import 'package:niwali_app/view/SignupScreens/signup.dart';
 import 'package:niwali_app/view/SignupScreens/terms.dart';
 import 'package:niwali_app/view/checkout/adress.dart';
+import 'package:niwali_app/view/checkout/new_card.dart';
+import 'package:niwali_app/view/checkout/order.dart';
+import 'package:niwali_app/view/checkout/payment_card.dart';
 import 'package:niwali_app/view/homescreens/cart.dart';
 import 'package:niwali_app/view/homescreens/home.dart';
 import 'package:niwali_app/view/homescreens/notifications.dart';
@@ -33,7 +36,9 @@ class AppRoutes {
         GetPage(name: MyPagesName.adress, page: () => Adress()),
           GetPage(name: MyPagesName.product, page: () => Product()),
            GetPage(name: MyPagesName.profile, page: () => Profile()),
-          GetPage(name: MyPagesName.Cart, page: () => Cart()),
+          GetPage(name: MyPagesName.paymentcard, page: () => PaymentCard()),
+          GetPage(name: MyPagesName.newcard, page: () => NewCard()),
+          GetPage(name: MyPagesName.order, page: () => Order()),
       
       
   ];

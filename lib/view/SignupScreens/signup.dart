@@ -17,10 +17,8 @@ class Signup extends StatefulWidget {
 class _SignupState extends State<Signup> {
   bool agree = false;
 
-  // 🔹 Add a global form key for validation
   final _formKey = GlobalKey<FormState>();
 
-  // 🔹 Text editing controllers (optional but helpful)
   final nameController = TextEditingController();
   final usernameController = TextEditingController();
   final emailController = TextEditingController();
@@ -31,27 +29,29 @@ class _SignupState extends State<Signup> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.greenLight,
-       appBar: const AppBarWidget( title: "Sign up",),
+      appBar: const AppBarWidget(title: "Sign up"),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
-          child: Form( // 🔹 Wrap everything in a Form
+          padding: EdgeInsets.symmetric(horizontal: 25, vertical: 25),
+          child: Form(
             key: _formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const SizedBox(height: 40),
+                const SizedBox(height: 20),
 
-                // 🔹 Logo
                 Center(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Center(
-                        child: Image.asset(MyImages.niwalilogowhite, height: 50),
+                        child: Image.asset(
+                          MyImages.niwalilogowhite,
+                          height: 50,
+                        ),
                       ),
-                      const SizedBox(height: 15),
-                      const Text(
+                      SizedBox(height: 15),
+                      Text(
                         "Create Account",
                         style: TextStyle(
                           color: Colors.white,
@@ -63,9 +63,8 @@ class _SignupState extends State<Signup> {
                   ),
                 ),
 
-                const SizedBox(height: 5),
+                SizedBox(height: 5),
 
-                // 🔹 Name
                 CustomTextField(
                   labelText: "Name",
                   icon: Icons.person,
@@ -77,9 +76,8 @@ class _SignupState extends State<Signup> {
                     return null;
                   },
                 ),
-                const SizedBox(height: 8),
+                SizedBox(height: 8),
 
-                // 🔹 Username
                 CustomTextField(
                   labelText: "Username",
                   icon: Icons.person,
@@ -93,7 +91,6 @@ class _SignupState extends State<Signup> {
                 ),
                 const SizedBox(height: 8),
 
-                // 🔹 Email
                 CustomTextField(
                   labelText: "Email",
                   icon: Icons.email,
@@ -108,9 +105,8 @@ class _SignupState extends State<Signup> {
                     return null;
                   },
                 ),
-                const SizedBox(height: 8),
+                SizedBox(height: 8),
 
-                // 🔹 Password
                 CustomTextField(
                   labelText: "Password",
                   icon: Icons.lock,
@@ -126,9 +122,8 @@ class _SignupState extends State<Signup> {
                     return null;
                   },
                 ),
-                const SizedBox(height: 8),
+                SizedBox(height: 8),
 
-                // 🔹 Confirm Password
                 CustomTextField(
                   labelText: "Confirm Password",
                   icon: Icons.lock,
@@ -145,9 +140,8 @@ class _SignupState extends State<Signup> {
                   },
                 ),
 
-                const SizedBox(height: 2),
+                SizedBox(height: 2),
 
-                // 🔹 Terms & Conditions checkbox
                 Row(
                   children: [
                     Checkbox(
@@ -160,10 +154,7 @@ class _SignupState extends State<Signup> {
                       activeColor: Colors.white,
                       checkColor: AppColors.greenDark,
                     ),
-                    const Text(
-                      "Agree with ",
-                      style: TextStyle(color: Colors.white),
-                    ),
+                    Text("Agree with ", style: TextStyle(color: Colors.white)),
                     TextButton(
                       onPressed: () {
                         Get.toNamed(MyPagesName.termsconditions);
@@ -179,25 +170,27 @@ class _SignupState extends State<Signup> {
                   ],
                 ),
 
-                const SizedBox(height: 10),
+                SizedBox(height: 5),
 
-                // 🔹 Sign Up Button
                 CustomButton(
                   text: "Sign up",
                   onPressed: () {
-                    Get.toNamed(
-                          MyPagesName.login,
-                        );
                     if (_formKey.currentState!.validate()) {
+                 Get.toNamed(MyPagesName.login);
                       if (!agree) {
-                        Get.snackbar("Error", "Please agree to the Terms & Conditions",
-                            backgroundColor: Colors.redAccent,
-                            colorText: Colors.white);
+                        Get.snackbar(
+                          "Error",
+                          "Please agree to the Terms & Conditions",
+                          backgroundColor: Colors.redAccent,
+                          colorText: Colors.white,
+                        );
                       } else {
-                        Get.snackbar("Success", "Form submitted successfully!",
-                            backgroundColor: Colors.green,
-                            colorText: Colors.white);
-                        // Add your signup logic here
+                        Get.snackbar(
+                          "Success",
+                          "Form submitted successfully!",
+                          backgroundColor: Colors.green,
+                          colorText: Colors.white,
+                        );
                       }
                     }
                   },
@@ -205,7 +198,6 @@ class _SignupState extends State<Signup> {
 
                 const SizedBox(height: 5),
 
-                // 🔹 Already have account
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -228,13 +220,12 @@ class _SignupState extends State<Signup> {
                   ],
                 ),
 
-                const SizedBox(height: 25),
+                SizedBox(height: 15),
 
-                // 🔹 Register as Distributor
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
+                    Text(
                       'Register as a ',
                       style: TextStyle(color: Colors.white, fontSize: 15),
                     ),

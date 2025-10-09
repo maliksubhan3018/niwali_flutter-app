@@ -3,21 +3,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:niwali_app/config/route_name.dart';
-import 'package:niwali_app/widgets/app_bar.dart';
+
 import 'package:niwali_app/widgets/image_widget.dart';
 import 'package:niwali_app/widgets/widget_cart.dart';
 import 'package:niwali_app/widgets/color_widget.dart';
 import 'package:niwali_app/widgets/custom_button.dart';
 
 class Cart extends StatelessWidget {
-  const Cart({super.key});
+ const  Cart({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       //appBar: const AppBarWidget( title: "cart",),
       body: Padding(
-        padding: const EdgeInsets.all(8),
+        padding:  EdgeInsets.all(8),
         child: Column(
           children: [
             Expanded(
@@ -80,10 +80,10 @@ class Cart extends StatelessWidget {
                       ],
                     ),
 
-                    const SizedBox(height: 8),
+                     SizedBox(height: 8),
                     Divider(color: Colors.white.withOpacity(0.5), thickness: 1),
 
-                    const SizedBox(height: 8),
+                     SizedBox(height: 8),
 
                     // Second Row (Total Amount + Checkout)
                     Row(
@@ -91,7 +91,7 @@ class Cart extends StatelessWidget {
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
+                          children:  [
                             Text(
                               "Total Amount",
                               style: TextStyle(

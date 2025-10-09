@@ -17,7 +17,6 @@ class ConfirmCode extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Logo
             Image.asset(
                 MyImages.niwalilogowhite,
                 height: 70,
@@ -36,9 +35,8 @@ class ConfirmCode extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             ),
-            const SizedBox(height: 8),
+             SizedBox(height: 8),
 
-            // OTP Input Boxes
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: List.generate(5, (index) {
@@ -68,17 +66,16 @@ class ConfirmCode extends StatelessWidget {
             ),
             const SizedBox(height: 32.0),
 
-            // Confirm Button
+           
             CustomButton(
               text: 'Confirm',
               onPressed: () {
-                // Handle confirm OTP action
+                
               },
               isPrimary: true,
             ),
             const SizedBox(height: 24.0),
 
-            // Resend Link
             Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -94,7 +91,7 @@ class ConfirmCode extends StatelessWidget {
                       onPressed: () {
                         //Get.toNamed(
                           //MyPagesName.signup,
-                        //); // ✅ navigate to Sign Up page
+                        //); 
                       },
                       child: const Text(
                         'Resend.',

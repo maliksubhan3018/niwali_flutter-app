@@ -38,6 +38,7 @@ dependencies:
   persistent_bottom_nav_bar_v2: ^6.1.0
   rename_app: ^1.6.5
   flutter_launcher_icons: ^0.14.4
+  carousel_slider: ^5.1.1
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true

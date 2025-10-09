@@ -22,18 +22,17 @@ class CustomTextField extends StatefulWidget {
 }
 
 class _CustomTextFieldState extends State<CustomTextField> {
-  bool _isObscured = true; // used for password visibility
+  bool _isObscured = true;
 
   @override
   void initState() {
     super.initState();
-    _isObscured = widget.obscureText; // set initial state
+    _isObscured = widget.obscureText;
   }
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      
       controller: widget.controller,
       obscureText: widget.obscureText ? _isObscured : false,
       validator: widget.validator,
@@ -48,7 +47,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
           borderSide: BorderSide.none,
         ),
 
-        // 👁 Visibility toggle for password field
         suffixIcon: widget.obscureText
             ? IconButton(
                 icon: Icon(
