@@ -24,22 +24,19 @@ class _LoginState extends State<Login> {
     return Scaffold(
       backgroundColor: AppColors.greenLight,
 
-      
-      appBar:  AppBarWidget( title: "Login",),
+      appBar: AppBarWidget(title: "Login"),
 
       body: SafeArea(
         child: Padding(
-          padding:  EdgeInsets.all(24.0),
+          padding: EdgeInsets.all(24.0),
           child: Form(
-            key: _formKey, 
+            key: _formKey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(MyImages.niwalilogowhite, height: 50, width: 250),
-                 SizedBox(height: 48.0),
+                SizedBox(height: 48.0),
 
-               
-                
                 CustomTextField(
                   labelText: 'Name',
                   icon: Icons.person,
@@ -51,7 +48,7 @@ class _LoginState extends State<Login> {
                     return null;
                   },
                 ),
-                const SizedBox(height: 16.0),
+                SizedBox(height: 16.0),
 
                 CustomTextField(
                   labelText: 'Password',
@@ -67,7 +64,7 @@ class _LoginState extends State<Login> {
                     return null;
                   },
                 ),
-                const SizedBox(height: 2),
+                SizedBox(height: 2),
 
                 Align(
                   alignment: Alignment.centerRight,
@@ -75,7 +72,7 @@ class _LoginState extends State<Login> {
                     onPressed: () {
                       Get.toNamed(MyPagesName.forgotpassword);
                     },
-                    child: const Text(
+                    child: Text(
                       'Forgot Password?',
                       style: TextStyle(
                         color: AppColors.parrotgreen,
@@ -84,7 +81,7 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 18),
+                SizedBox(height: 18),
 
                 CustomButton(
                   text: 'Login',
@@ -92,18 +89,18 @@ class _LoginState extends State<Login> {
                     if (_formKey.currentState!.validate()) {
                       Get.toNamed(MyPagesName.home);
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Login successful!')),
+                        SnackBar(content: Text('Login successful!')),
                       );
                     }
                   },
                 ),
 
-                 SizedBox(height: 16),
+                SizedBox(height: 16),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                     Text(
+                    Text(
                       'Already have an Account?',
                       style: TextStyle(color: Colors.white),
                     ),
@@ -115,7 +112,7 @@ class _LoginState extends State<Login> {
                       onPressed: () {
                         Get.toNamed(MyPagesName.signup);
                       },
-                      child: const Text(
+                      child: Text(
                         'Sign Up',
                         style: TextStyle(
                           color: AppColors.parrotgreen,

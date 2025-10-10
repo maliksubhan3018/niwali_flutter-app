@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:niwali_app/widgets/app_bar.dart';
+import 'package:niwali_app/widgets/color_widget.dart';
 
 class OrderHistory extends StatelessWidget {
   const OrderHistory({super.key});
@@ -7,12 +8,12 @@ class OrderHistory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: const AppBarWidget(title: "Order History"),
+      appBar: AppBarWidget(title: "Order History"),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         child: Column(
-          children: const [
+          children: [
             OrderCard(
               orderId: "Order ID",
               date: "15 Oct, 2023",
@@ -72,48 +73,37 @@ class OrderCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(12),
+      padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: const Color(0xFF19A45B), // green card color
+        color: AppColors.greenLight,
         borderRadius: BorderRadius.circular(8),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Top row: Order ID + Date
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 orderId,
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              Text(
-                date,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 12,
-                ),
-              ),
+              Text(date, style: TextStyle(color: Colors.white, fontSize: 12)),
             ],
           ),
 
-          const SizedBox(height: 4),
+          SizedBox(height: 4),
 
-          // Second row: Items + Price
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                items,
-                style: const TextStyle(color: Colors.white),
-              ),
+              Text(items, style: TextStyle(color: Colors.white)),
               Text(
                 price,
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
                 ),
@@ -121,21 +111,20 @@ class OrderCard extends StatelessWidget {
             ],
           ),
 
-          const SizedBox(height: 8),
-          const Divider(color: Colors.white70, thickness: 0.5),
-          const SizedBox(height: 6),
+          SizedBox(height: 8),
+          Divider(color: Colors.white70, thickness: 0.5),
+          SizedBox(height: 6),
 
-          // Bottom row: Status + T.ID
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
                 children: [
                   Icon(Icons.circle, color: statusColor, size: 12),
-                  const SizedBox(width: 6),
+                  SizedBox(width: 6),
                   Text(
                     status,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
                     ),
@@ -144,10 +133,7 @@ class OrderCard extends StatelessWidget {
               ),
               Text(
                 transactionId,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 12,
-                ),
+                style: TextStyle(color: Colors.white, fontSize: 12),
               ),
             ],
           ),

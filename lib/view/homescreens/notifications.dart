@@ -8,9 +8,9 @@ class Notifications extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
+        padding:  EdgeInsets.all(16),
         child: Column(
-          children: const [
+          children:  [
             NotificationItem(
               name: "Ronald Richards",
               date: "13 Sep, 2020",

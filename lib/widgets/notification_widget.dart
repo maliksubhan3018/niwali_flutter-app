@@ -15,54 +15,33 @@ class NotificationItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8.0),
+      margin: EdgeInsets.symmetric(vertical: 8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Name
           Text(
             name,
-            style: const TextStyle(
-              fontWeight: FontWeight.w600,
-              fontSize: 16,
-            ),
+            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
           ),
-          const SizedBox(height: 6),
+          SizedBox(height: 6),
 
-          // Date with icon
           Row(
             children: [
-              const Icon(
-                Icons.access_time,
-                size: 14,
-                color: Colors.grey,
-              ),
-              const SizedBox(width: 6),
-              Text(
-                date,
-                style: const TextStyle(
-                  fontSize: 13,
-                  color: Colors.grey,
-                ),
-              ),
+              Icon(Icons.access_time, size: 14, color: Colors.grey),
+              SizedBox(width: 6),
+              Text(date, style: TextStyle(fontSize: 13, color: Colors.grey)),
             ],
           ),
 
-          const SizedBox(height: 3),
+          SizedBox(height: 3),
 
-          // Divider
-          const Divider(thickness: 1, color: Colors.grey),
+          Divider(thickness: 1, color: Colors.grey),
 
-          const SizedBox(height: 4),
+          SizedBox(height: 4),
 
-          // Description / message
           Text(
             message,
-            style: const TextStyle(
-              fontSize: 14,
-              color: Colors.black87,
-              height: 1.4,
-            ),
+            style: TextStyle(fontSize: 14, color: Colors.black87, height: 1.4),
           ),
         ],
       ),

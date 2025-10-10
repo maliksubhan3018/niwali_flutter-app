@@ -1,9 +1,9 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:niwali_app/widgets/color_widget.dart'; // your color widget
+import 'package:niwali_app/widgets/color_widget.dart';
 
-import 'package:niwali_app/widgets/image_widget.dart'; // your custom app bar
+import 'package:niwali_app/widgets/image_widget.dart';
 
 class Product extends StatelessWidget {
   const Product({super.key});
@@ -11,38 +11,35 @@ class Product extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true, // allows image behind appbar
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor:AppColors.greenDark,
-        shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(30), // 👈 curve only bottom-left
+        backgroundColor: AppColors.greenDark,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30)),
         ),
-      ),
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
+        title: Text(
           'Product',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
         actions: [
           IconButton(
-            icon: const Icon(Icons.shopping_cart_outlined, color: Colors.white),
+            icon: Icon(Icons.shopping_cart_outlined, color: Colors.white),
             onPressed: () {},
           ),
         ],
       ),
       body: Stack(
         children: [
-          // Background image
           Container(
             height: MediaQuery.of(context).size.height * 0.45,
             width: double.infinity,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(MyImages.product1), // your product image path
                 fit: BoxFit.cover,
@@ -50,7 +47,6 @@ class Product extends StatelessWidget {
             ),
           ),
 
-          // Favorite icon
           Positioned(
             top: MediaQuery.of(context).padding.top + 60,
             left: 20,
@@ -67,17 +63,16 @@ class Product extends StatelessWidget {
                   ),
                 ],
               ),
-              child: const Icon(Icons.favorite_border, color: Colors.green),
+              child: Icon(Icons.favorite_border, color: Colors.green),
             ),
           ),
 
-          // Product details container
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
               height: MediaQuery.of(context).size.height * 0.55,
               width: double.infinity,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(25),
@@ -85,14 +80,13 @@ class Product extends StatelessWidget {
                 ),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: EdgeInsets.all(20.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Product name + price
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
+                      children: [
                         Text(
                           'Monstera Adan',
                           style: TextStyle(
@@ -110,15 +104,18 @@ class Product extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 10),
+                    SizedBox(height: 10),
 
-                    const Text(
+                    Text(
                       'Monstera Adansoni grows best in a well-draining Aroid mix using bark, perlite, peat moss, and charcoal. Keep your plant in bright indirect light and humidity above 60%. When watering, make sure that the potting mix of your adansonii remains slightly moist.',
-                      style: TextStyle(fontSize: 14, color: Colors.black54, height: 1.5),
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black54,
+                        height: 1.5,
+                      ),
                     ),
-                    const SizedBox(height: 20),
+                    SizedBox(height: 20),
 
-                    // Button and quantity row
                     Container(
                       height: 50,
                       width: double.infinity,
@@ -128,20 +125,32 @@ class Product extends StatelessWidget {
                       ),
                       child: Row(
                         //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [ 
-                          SizedBox(width: 10,),
-                          Icon(Icons.shopping_bag_outlined, color: Colors.white),
+                        children: [
+                          SizedBox(width: 10),
+                          Icon(
+                            Icons.shopping_bag_outlined,
+                            color: Colors.white,
+                          ),
                           SizedBox(width: 5),
                           Text(
                             'View items',
-                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                           SizedBox(width: 50),
-                          Icon(Icons.remove_circle_outline, color: Colors.white),
-                          SizedBox(width: 10), 
+                          Icon(
+                            Icons.remove_circle_outline,
+                            color: Colors.white,
+                          ),
+                          SizedBox(width: 10),
                           Text(
                             '1',
-                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                           SizedBox(width: 20),
                           Icon(Icons.add_circle_outline, color: Colors.white),

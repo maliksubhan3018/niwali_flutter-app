@@ -10,14 +10,13 @@ import 'package:niwali_app/widgets/color_widget.dart';
 import 'package:niwali_app/widgets/custom_button.dart';
 
 class Cart extends StatelessWidget {
- const  Cart({super.key});
+  const Cart({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //appBar: const AppBarWidget( title: "cart",),
       body: Padding(
-        padding:  EdgeInsets.all(8),
+        padding: EdgeInsets.all(8),
         child: Column(
           children: [
             Expanded(
@@ -62,11 +61,10 @@ class Cart extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: EdgeInsets.all(12.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // First Row (Total Items)
                     Row(
                       children: [
                         Text(
@@ -80,18 +78,17 @@ class Cart extends StatelessWidget {
                       ],
                     ),
 
-                     SizedBox(height: 8),
+                    SizedBox(height: 8),
                     Divider(color: Colors.white.withOpacity(0.5), thickness: 1),
 
-                     SizedBox(height: 8),
+                    SizedBox(height: 8),
 
-                    // Second Row (Total Amount + Checkout)
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children:  [
+                          children: [
                             Text(
                               "Total Amount",
                               style: TextStyle(
@@ -117,7 +114,7 @@ class Cart extends StatelessWidget {
                           child: CustomButton(
                             text: "Checkout →",
                             onPressed: () {
-                               Get.toNamed(MyPagesName.adress);
+                              Get.toNamed(MyPagesName.adress);
                             },
                           ),
                         ),

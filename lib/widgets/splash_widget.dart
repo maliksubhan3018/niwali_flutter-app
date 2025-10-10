@@ -32,7 +32,6 @@ class SplashContent extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-         
           SizedBox(
             height: containerHeight,
             child: Container(
@@ -53,40 +52,37 @@ class SplashContent extends StatelessWidget {
               ),
             ),
           ),
-         
+
           SizedBox(
             height: containerHeight,
             child: Container(
               width: double.infinity,
               decoration: const BoxDecoration(
                 color: Color(0xFF1EAB70),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(50),
-                ),
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(50)),
               ),
-              padding: const EdgeInsets.all(24.0),
+              padding: EdgeInsets.all(24.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
                         heading,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      const SizedBox(height: 12.0),
+                      SizedBox(height: 12.0),
                       Text(
                         bodyText,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 12.0,
                           color: Colors.white,
                           height: 1.5,
@@ -94,25 +90,29 @@ class SplashContent extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                       if (showDots) ...[
-                        const SizedBox(height: 8.0),
+                        SizedBox(height: 8.0),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Icon(Icons.more_horiz, color: Colors.white54, size: 20),
+                            Icon(
+                              Icons.more_horiz,
+                              color: Colors.white54,
+                              size: 20,
+                            ),
                           ],
                         ),
                       ],
                     ],
                   ),
-                  const SizedBox(height: 24.0),
-                 
+                  SizedBox(height: 24.0),
+
                   if (showSkip) ...[
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         TextButton(
                           onPressed: onSkip,
-                          child: const Text(
+                          child: Text(
                             'Skip',
                             style: TextStyle(
                               color: Colors.white,
@@ -129,14 +129,14 @@ class SplashContent extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8.0),
                             ),
-                            padding: const EdgeInsets.symmetric(
+                            padding: EdgeInsets.symmetric(
                               horizontal: 32.0,
                               vertical: 12.0,
                             ),
                           ),
                           child: Text(
                             buttonText,
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 16.0,
                               fontWeight: FontWeight.w600,
                             ),
@@ -153,14 +153,14 @@ class SplashContent extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8.0),
                         ),
-                        padding: const EdgeInsets.symmetric(
+                        padding: EdgeInsets.symmetric(
                           horizontal: 32.0,
                           vertical: 12.0,
                         ),
                       ),
                       child: Text(
                         buttonText,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 16.0,
                           fontWeight: FontWeight.w600,
                         ),

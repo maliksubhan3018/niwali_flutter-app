@@ -36,38 +36,38 @@ class _LanguageState extends State<Language> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar:  AppBarWidget( title: "Languages",),
+      appBar: AppBarWidget(title: "Languages"),
       backgroundColor: Colors.white,
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(16.0),
             child: TextField(
               controller: _searchController,
               decoration: InputDecoration(
                 hintText: 'Search...',
-                prefixIcon: const Icon(Icons.search, color: Colors.green),
+                prefixIcon: Icon(Icons.search, color: Colors.green),
                 filled: true,
                 fillColor: Colors.white,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(25.0),
-                  borderSide: const BorderSide(color: Colors.green, width: 1.0),
+                  borderSide: BorderSide(color: Colors.green, width: 1.0),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(25.0),
-                  borderSide: const BorderSide(color: Colors.green, width: 1.0),
+                  borderSide: BorderSide(color: Colors.green, width: 1.0),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(25.0),
-                  borderSide: const BorderSide(color: Colors.green, width: 2.0),
+                  borderSide: BorderSide(color: Colors.green, width: 2.0),
                 ),
-                contentPadding: const EdgeInsets.symmetric(vertical: 10.0),
+                contentPadding: EdgeInsets.symmetric(vertical: 10.0),
               ),
             ),
           ),
           Expanded(
             child: ListView.builder(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
               itemCount: languages.length,
               itemBuilder: (context, index) {
                 final lang = languages[index];
@@ -75,11 +75,16 @@ class _LanguageState extends State<Language> {
                 return Container(
                   margin: const EdgeInsets.only(bottom: 8.0),
                   decoration: BoxDecoration(
-                    color: isSelected ? AppColors.greenDark : AppColors.greenLight,
+                    color: isSelected
+                        ? AppColors.greenDark
+                        : AppColors.greenLight,
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   child: ListTile(
-                    contentPadding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                    contentPadding: EdgeInsets.symmetric(
+                      horizontal: 16.0,
+                      vertical: 8.0,
+                    ),
                     leading: CircleAvatar(
                       radius: 20,
                       backgroundColor: Colors.transparent,
@@ -105,7 +110,7 @@ class _LanguageState extends State<Language> {
                     title: Text(
                       lang['name'],
                       style: TextStyle(
-                        color: isSelected ? Colors.white : Colors.black87,
+                        color: isSelected ? Colors.white : AppColors.white,
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                       ),

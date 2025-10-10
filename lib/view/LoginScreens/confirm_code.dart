@@ -13,21 +13,18 @@ class ConfirmCode extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.greenLight,
-       appBar: const AppBarWidget(title: "Verify",),
+      appBar: AppBarWidget(title: "Verify"),
       body: Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: EdgeInsets.all(24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-                MyImages.niwalilogowhite,
-                height: 70,
-              ),
-            const SizedBox(height: 100),
+            Image.asset(MyImages.niwalilogowhite, height: 70),
+            SizedBox(height: 100),
 
-            // Title
-            Align(alignment: AlignmentGeometry.topLeft,
-              child: const Text(
+            Align(
+              alignment: AlignmentGeometry.topLeft,
+              child: Text(
                 'Enter your OTP code here.',
                 style: TextStyle(
                   fontSize: 12.0,
@@ -37,7 +34,7 @@ class ConfirmCode extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
             ),
-             SizedBox(height: 8),
+            SizedBox(height: 8),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -49,7 +46,7 @@ class ConfirmCode extends StatelessWidget {
                     textAlign: TextAlign.center,
                     keyboardType: TextInputType.number,
                     maxLength: 1,
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       counterText: '',
                       filled: true,
                       fillColor: Colors.white,
@@ -59,54 +56,54 @@ class ConfirmCode extends StatelessWidget {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(8)),
-                        borderSide: BorderSide(color: AppColors.greenDark, width: 2),
+                        borderSide: BorderSide(
+                          color: AppColors.greenDark,
+                          width: 2,
+                        ),
                       ),
                     ),
                   ),
                 );
               }),
             ),
-            const SizedBox(height: 32.0),
+            SizedBox(height: 32.0),
 
-           
             CustomButton(
               text: 'Confirm',
               onPressed: () {
-                Get.toNamed(
-                          MyPagesName.login,
-                        ); 
+                Get.toNamed(MyPagesName.login);
               },
               isPrimary: true,
             ),
-            const SizedBox(height: 24.0),
+            SizedBox(height: 24.0),
 
             Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      'Dont receive the OTP?',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    TextButton(
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.all(2),
-                        minimumSize: Size(0, 0),
-                      ),
-                      onPressed: () {
-                        //Get.toNamed(
-                          //MyPagesName.signup,
-                        //); 
-                      },
-                      child: const Text(
-                        'Resend.',
-                        style: TextStyle(
-                          color: AppColors.parrotgreen,
-                          fontWeight: FontWeight.normal,
-                        ),
-                      ),
-                    ),
-                  ],
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Dont receive the OTP?',
+                  style: TextStyle(color: Colors.white),
                 ),
+                TextButton(
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.all(2),
+                    minimumSize: Size(0, 0),
+                  ),
+                  onPressed: () {
+                    //Get.toNamed(
+                    //MyPagesName.signup,
+                    //);
+                  },
+                  child: const Text(
+                    'Resend.',
+                    style: TextStyle(
+                      color: AppColors.parrotgreen,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

@@ -29,7 +29,7 @@ class _SignupState extends State<Signup> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.greenLight,
-      appBar: const AppBarWidget(title: "Sign up"),
+      appBar: AppBarWidget(title: "Sign up"),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 25, vertical: 25),
@@ -38,7 +38,7 @@ class _SignupState extends State<Signup> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const SizedBox(height: 20),
+                SizedBox(height: 20),
 
                 Center(
                   child: Column(
@@ -89,7 +89,7 @@ class _SignupState extends State<Signup> {
                     return null;
                   },
                 ),
-                const SizedBox(height: 8),
+                SizedBox(height: 8),
 
                 CustomTextField(
                   labelText: "Email",
@@ -176,7 +176,7 @@ class _SignupState extends State<Signup> {
                   text: "Sign up",
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                 Get.toNamed(MyPagesName.login);
+                      Get.toNamed(MyPagesName.login);
                       if (!agree) {
                         Get.snackbar(
                           "Error",
@@ -196,12 +196,12 @@ class _SignupState extends State<Signup> {
                   },
                 ),
 
-                const SizedBox(height: 5),
+                SizedBox(height: 5),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
+                    Text(
                       "Already Have an Account? ",
                       style: TextStyle(color: Colors.white),
                     ),

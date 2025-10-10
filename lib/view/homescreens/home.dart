@@ -100,7 +100,7 @@ class _HomeState extends State<Home> {
         Container(
           height: 200,
           width: double.infinity,
-          decoration: const BoxDecoration(
+          decoration:  BoxDecoration(
             image: DecorationImage(
               image: AssetImage(MyImages.banner),
               fit: BoxFit.cover,
@@ -108,11 +108,11 @@ class _HomeState extends State<Home> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(16),
+          padding:  EdgeInsets.all(16),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
+               Text(
                 'All items',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
@@ -121,10 +121,10 @@ class _HomeState extends State<Home> {
                   IconButton(
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Favorites toggled')),
+                         SnackBar(content: Text('Favorites toggled')),
                       );
                     },
-                    icon: const Icon(
+                    icon:  Icon(
                       Icons.favorite_border,
                       color: AppColors.greenDark,
                     ),
@@ -151,8 +151,8 @@ class _HomeState extends State<Home> {
         Expanded(
           child: isGridView
               ? GridView.builder(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  padding:  EdgeInsets.symmetric(horizontal: 8),
+                  gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     childAspectRatio: 0.7,
                     crossAxisSpacing: 8,
@@ -171,7 +171,7 @@ class _HomeState extends State<Home> {
                   },
                 )
               : ListView.builder(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  padding:  EdgeInsets.symmetric(horizontal: 8),
                   itemCount: items.length,
                   itemBuilder: (context, index) {
                     final item = items[index];
@@ -197,7 +197,6 @@ class _HomeState extends State<Home> {
         index: _currentIndex,
         children: [
          buildHomeBody(),
-          //const Center(child: Text('Cart Page')),
           const Cart(),
           const Notifications(),
           const Profile(),

@@ -15,36 +15,29 @@ class ForgotPassword extends StatefulWidget {
 }
 
 class _ForgotPasswordState extends State<ForgotPassword> {
- 
   final _formKey = GlobalKey<FormState>();
 
-  
   final TextEditingController emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.greenLight,
-       appBar: const AppBarWidget( title: "Forgot",),
+      appBar: AppBarWidget(title: "Forgot"),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Form( 
+          padding: EdgeInsets.all(24.0),
+          child: Form(
             key: _formKey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-               
-                Image.asset(
-                  MyImages.niwalilogowhite,
-                  height: 70,
-                ),
-                const SizedBox(height: 48.0),
+                Image.asset(MyImages.niwalilogowhite, height: 70),
+                SizedBox(height: 48.0),
 
-              
                 Align(
                   alignment: AlignmentGeometry.topLeft,
-                  child: const Text(
+                  child: Text(
                     'Forgot Password',
                     style: TextStyle(
                       fontSize: 14,
@@ -53,10 +46,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 8),
+                SizedBox(height: 8),
 
-              
-                const Text(
+                Text(
                   'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
                   style: TextStyle(
                     fontSize: 16.0,
@@ -65,9 +57,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   ),
                   textAlign: TextAlign.justify,
                 ),
-                const SizedBox(height: 32.0),
+                SizedBox(height: 32.0),
 
-                // Email field with validation
                 CustomTextField(
                   labelText: 'Email',
                   icon: Icons.email,
@@ -82,17 +73,14 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     return null;
                   },
                 ),
-                const SizedBox(height: 24.0),
+                SizedBox(height: 24.0),
 
-                // Verify button
                 CustomButton(
                   text: 'Verify',
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      // ✅ If validation passes, navigate to confirm code screen
                       Get.toNamed(MyPagesName.confirmcode);
                     } else {
-                      // ✅ If validation fails, show a message
                       Get.snackbar(
                         "Error",
                         "Please correct the highlighted errors",

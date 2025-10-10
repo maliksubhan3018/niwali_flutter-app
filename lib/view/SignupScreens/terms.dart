@@ -8,29 +8,24 @@ class TermsConditions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: const AppBarWidget(title: "Terms & Conditions",),
+      appBar: AppBarWidget(title: "Terms & Conditions"),
       body: SafeArea(
         child: Padding(
-          padding:  EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset(
-                MyImages.niwalilogo,
-                height: 100,
-              ),
-               SizedBox(height: 15),
-              Align(alignment: AlignmentGeometry.topLeft,
-                child:  Text(
+              Image.asset(MyImages.niwalilogo, height: 100),
+              SizedBox(height: 15),
+              Align(
+                alignment: AlignmentGeometry.topLeft,
+                child: Text(
                   'Terms:',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 ),
               ),
-               SizedBox(height: 10),
-        
+              SizedBox(height: 10),
+
               buildBulletText(
                 'Niwali is a reliable supplier of a wide range of health and nutritional supplements.',
               ),
@@ -57,15 +52,9 @@ class TermsConditions extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-         Text(
-          "• ",
-          style: TextStyle(fontSize: 18, height: 1.5),
-        ),
+        Text("• ", style: TextStyle(fontSize: 18, height: 1.5)),
         Expanded(
-          child: Text(
-            text,
-            style: const TextStyle(fontSize: 16, height: 1.5),
-          ),
+          child: Text(text, style: TextStyle(fontSize: 16, height: 1.5)),
         ),
       ],
     );

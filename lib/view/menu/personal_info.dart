@@ -40,38 +40,33 @@ class _PersonalInfoState extends State<PersonalInfo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: const AppBarWidget(title: "personal information"),
+      appBar: AppBarWidget(title: "personal information"),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(8),
+          padding: EdgeInsets.all(8),
           child: Column(
             children: [
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
               Center(
                 child: GestureDetector(
-                  onTap: () {
-                  },
+                  onTap: () {},
                   child: Stack(
                     children: [
                       CircleAvatar(
                         radius: 60,
                         backgroundColor: Colors.grey[300],
-                        child: const Icon(
-                          Icons.person,
-                          size: 60,
-                          color: Colors.grey,
-                        ),
+                        child: Icon(Icons.person, size: 60, color: Colors.grey),
                       ),
                       Positioned(
                         bottom: 0,
                         right: 0,
                         child: Container(
-                          padding: const EdgeInsets.all(4),
-                          decoration: const BoxDecoration(
+                          padding: EdgeInsets.all(4),
+                          decoration: BoxDecoration(
                             color: Colors.white,
                             shape: BoxShape.circle,
                           ),
-                          child: const Icon(
+                          child: Icon(
                             Icons.camera_alt,
                             color: Colors.green,
                             size: 20,
@@ -82,44 +77,36 @@ class _PersonalInfoState extends State<PersonalInfo> {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
-              CustomField(
-                labelText: 'Full Name',
-                controller: _nameController,
-              ),
-              const SizedBox(height: 10),
+              SizedBox(height: 20),
+              CustomField(labelText: 'Full Name', controller: _nameController),
+              SizedBox(height: 10),
               CustomField(
                 labelText: 'Phone Number',
                 controller: _phoneController,
                 isNumeric: true,
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
               CustomField(
                 labelText: 'Password',
                 controller: _passwordController,
                 obscureText: _obscurePassword,
-               
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
               CustomField(
                 labelText: 'Address',
                 controller: _addressController,
                 suffixIcon: Container(
-                  margin: const EdgeInsets.only(right: 16),
+                  margin: EdgeInsets.only(right: 16),
                   width: 6,
                   height: 6,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: Colors.red,
                     shape: BoxShape.circle,
                   ),
                 ),
               ),
-              const SizedBox(height: 30),
-              CustomButton(
-                text: 'Update',
-                onPressed: () {
-                },
-              ),
+              SizedBox(height: 30),
+              CustomButton(text: 'Update', onPressed: () {}),
             ],
           ),
         ),

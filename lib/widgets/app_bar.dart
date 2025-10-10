@@ -1,6 +1,5 @@
-// lib/widgets/app_bar.dart
 import 'package:flutter/material.dart';
-import 'package:niwali_app/widgets/color_widget.dart'; // your custom colors file
+import 'package:niwali_app/widgets/color_widget.dart'; 
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final String title;

@@ -19,9 +19,7 @@ class CartItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: AppColors.greenLight,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -36,7 +34,7 @@ class CartItemWidget extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              const SizedBox(width: 10),
+              SizedBox(width: 10),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -48,21 +46,15 @@ class CartItemWidget extends StatelessWidget {
                       fontSize: 12,
                     ),
                   ),
-                  SizedBox(height: 5,),
+                  SizedBox(height: 5),
                   Text(
                     '\$$price',
-                    style: TextStyle(
-                      color: AppColors.white,
-                      fontSize: 12,
-                    ),
+                    style: TextStyle(color: AppColors.white, fontSize: 12),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 10),
                   Text(
                     '\$$price',
-                    style: TextStyle(
-                      color: AppColors.white,
-                      fontSize: 10,
-                    ),
+                    style: TextStyle(color: AppColors.white, fontSize: 10),
                   ),
                 ],
               ),
@@ -72,53 +64,59 @@ class CartItemWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 5, right: 10),
+                padding: EdgeInsets.only(top: 5, right: 10),
                 child: IconButton(
-                  icon: const Icon(Icons.delete_outline, color: Colors.white, size: 20),
-                  onPressed: () {
-                   
-                  },
+                  icon: Icon(
+                    Icons.delete_outline,
+                    color: Colors.white,
+                    size: 20,
+                  ),
+                  onPressed: () {},
                   style: IconButton.styleFrom(
-                    shape: const CircleBorder(),
+                    shape: CircleBorder(),
                     padding: EdgeInsets.zero,
-                    minimumSize: const Size(20, 20),
+                    minimumSize: Size(20, 20),
                     backgroundColor: Colors.transparent,
                   ),
                 ),
               ),
-              const SizedBox(height: 15),
+              SizedBox(height: 15),
               Row(
-  children: [
-    IconButton(
-      icon: const Icon(Icons.remove, color: AppColors.greenDark, size: 14),
-      onPressed: () {},
-      style: IconButton.styleFrom(
-        shape: const CircleBorder(),
-        padding: const EdgeInsets.all(2),
-        minimumSize: const Size(24, 24), // 👈 reduce default 48x48
-        backgroundColor: AppColors.white,
-      ),
-    ),
-    const SizedBox(width: 3),
-    Text(
-      '$quantity',
-      style: const TextStyle(color: AppColors.white),
-    ),
-    const SizedBox(width: 3),
-    IconButton(
-      icon: const Icon(Icons.add, color: AppColors.greenLight, size: 14),
-      onPressed: () {},
-      style: IconButton.styleFrom(
-        shape: const CircleBorder(),
-        padding: const EdgeInsets.all(2),
-        minimumSize: const Size(24, 24), // 👈 same fix here
-        backgroundColor: AppColors.white,
-      ),
-    ),
-    SizedBox(width: 10,)
-  ],
-)
-
+                children: [
+                  IconButton(
+                    icon: Icon(
+                      Icons.remove,
+                      color: AppColors.greenDark,
+                      size: 14,
+                    ),
+                    onPressed: () {},
+                    style: IconButton.styleFrom(
+                      shape: CircleBorder(),
+                      padding: EdgeInsets.all(2),
+                      minimumSize: Size(24, 24),
+                      backgroundColor: AppColors.white,
+                    ),
+                  ),
+                  SizedBox(width: 3),
+                  Text('$quantity', style: TextStyle(color: AppColors.white)),
+                  SizedBox(width: 3),
+                  IconButton(
+                    icon: Icon(
+                      Icons.add,
+                      color: AppColors.greenLight,
+                      size: 14,
+                    ),
+                    onPressed: () {},
+                    style: IconButton.styleFrom(
+                      shape: CircleBorder(),
+                      padding: EdgeInsets.all(2),
+                      minimumSize: Size(24, 24),
+                      backgroundColor: AppColors.white,
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                ],
+              ),
             ],
           ),
         ],

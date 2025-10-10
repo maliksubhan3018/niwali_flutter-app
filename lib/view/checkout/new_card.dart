@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:niwali_app/config/route_name.dart';
@@ -13,7 +15,7 @@ class NewCard extends StatefulWidget {
 }
 
 class _NewCardState extends State<NewCard> {
-  int _selectedIndex = 0; // Track the selected button index
+  int _selectedIndex = 0; 
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +25,14 @@ class _NewCardState extends State<NewCard> {
     final expController = TextEditingController();
 
     return Scaffold(
-      appBar: const AppBarWidget(title: "Add New Card"),
+      appBar:  AppBarWidget(title: "Add New Card"),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(8),
+          padding:  EdgeInsets.all(8),
           child: Column(
             children: [
               paymentbuttons(),
-              const SizedBox(height: 20),
+               SizedBox(height: 20),
               CustomField(labelText: 'Card Owner', controller: nameController),
               CustomField(
                 labelText: 'Card Number',
@@ -46,7 +48,7 @@ class _NewCardState extends State<NewCard> {
                       isNumeric: true,
                     ),
                   ),
-                  const SizedBox(width: 8.0),
+                   SizedBox(width: 8.0),
                   Expanded(
                     child: CustomField(
                       labelText: 'CVV',
@@ -56,7 +58,7 @@ class _NewCardState extends State<NewCard> {
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
+               SizedBox(height: 20),
               SizedBox(
                 width: 300,
                 child: CustomButton(
@@ -99,7 +101,6 @@ class _NewCardState extends State<NewCard> {
             height: 60,
             decoration: BoxDecoration(
               color: isSelected
-                  // ignore: deprecated_member_use
                   ? (option['color'] as Color).withOpacity(0.1)
                   : Colors.white,
               border: Border.all(

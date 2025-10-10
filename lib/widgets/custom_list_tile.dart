@@ -22,7 +22,7 @@ class CustomListTile extends StatelessWidget {
     return GestureDetector(
       onTap: onTap, 
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 4),
+        margin:  EdgeInsets.symmetric(vertical: 4),
         child: ListTile(
           tileColor: AppColors.greenLight,
           shape: RoundedRectangleBorder(
@@ -33,7 +33,7 @@ class CustomListTile extends StatelessWidget {
             title,
             style: TextStyle(color: textColor ?? Colors.white),
           ),
-          trailing: const Icon(Icons.arrow_forward_ios, color: Colors.white),
+          trailing:  Icon(Icons.arrow_forward_ios, color: Colors.white),
         ),
       ),
     );

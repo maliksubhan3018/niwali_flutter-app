@@ -11,7 +11,7 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(8),
+        padding:  EdgeInsets.all(8),
         child: Column(
           children: [
             Align(
@@ -29,7 +29,7 @@ class Profile extends StatelessWidget {
               height: 100,
               width: double.infinity,
               child: Padding(
-                padding: const EdgeInsets.all(12),
+                padding:  EdgeInsets.all(12),
                 child: ListTile(
                   leading: CircleAvatar(
                     backgroundColor: Colors.grey[200],

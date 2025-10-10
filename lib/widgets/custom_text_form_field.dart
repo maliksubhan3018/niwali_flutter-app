@@ -38,7 +38,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       validator: widget.validator,
       decoration: InputDecoration(
         labelText: widget.labelText,
-        labelStyle: const TextStyle(color: Colors.grey),
+        labelStyle:  TextStyle(color: Colors.grey),
         prefixIcon: Icon(widget.icon, color: AppColors.greenDark),
         filled: true,
         fillColor: Colors.white,

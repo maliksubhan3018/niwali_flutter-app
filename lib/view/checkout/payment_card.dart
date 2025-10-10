@@ -20,14 +20,14 @@ class PaymentCard extends StatelessWidget {
     final List<String> cardImages = [MyImages.card, MyImages.banner];
 
     return Scaffold(
-      appBar: const AppBarWidget(title: "payment"),
+      appBar: AppBarWidget(title: "payment"),
       backgroundColor: Colors.white,
       body: Padding(
-        padding: const EdgeInsets.all(8),
+        padding: EdgeInsets.all(8),
         child: SafeArea(
           child: Column(
             children: [
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
 
               CarouselSlider(
                 options: CarouselOptions(
@@ -57,7 +57,7 @@ class PaymentCard extends StatelessWidget {
                 }).toList(),
               ),
 
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
 
               CustomButton(
                 text: 'Add new card',
@@ -82,7 +82,7 @@ class PaymentCard extends StatelessWidget {
                       isNumeric: true,
                     ),
                   ),
-                  const SizedBox(width: 8.0),
+                  SizedBox(width: 8.0),
                   Expanded(
                     child: CustomField(
                       labelText: 'CVV',

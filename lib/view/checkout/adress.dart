@@ -20,9 +20,9 @@ class Adress extends StatelessWidget {
     final addressController = TextEditingController();
 
     return Scaffold(
-      appBar: const AppBarWidget(title: "address"),
+      appBar:  AppBarWidget(title: "address"),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding:  EdgeInsets.all(8.0),
         child: Column(
           children: [
             CustomField(
@@ -42,7 +42,7 @@ class Adress extends StatelessWidget {
                     controller: countryController,
                   ),
                 ),
-                const SizedBox(width: 8.0),
+                 SizedBox(width: 8.0),
                 Expanded(
                   child: CustomField(
                     labelText: 'City',
@@ -60,7 +60,7 @@ class Adress extends StatelessWidget {
                     isNumeric: true,
                   ),
                 ),
-                const SizedBox(width: 8.0),
+                 SizedBox(width: 8.0),
                 Expanded(
                   child: CustomField(
                     labelText: 'Zip Code',
