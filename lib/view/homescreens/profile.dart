@@ -11,7 +11,7 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding:  EdgeInsets.all(8),
+        padding: EdgeInsets.all(8),
         child: Column(
           children: [
             Align(
@@ -29,7 +29,7 @@ class Profile extends StatelessWidget {
               height: 100,
               width: double.infinity,
               child: Padding(
-                padding:  EdgeInsets.all(12),
+                padding: EdgeInsets.all(12),
                 child: ListTile(
                   leading: CircleAvatar(
                     backgroundColor: Colors.grey[200],
@@ -52,11 +52,7 @@ class Profile extends StatelessWidget {
                     onTap: () {
                       Get.toNamed(MyPagesName.personalinfo);
                     },
-                    child: Icon(
-                      Icons.edit,
-                      color: Colors.white,
-                      size: 20,
-                    ),
+                    child: Icon(Icons.edit, color: Colors.white, size: 20),
                   ),
                 ),
               ),
@@ -71,22 +67,25 @@ class Profile extends StatelessWidget {
             ),
             CustomListTile(icon: Icons.settings, title: 'Account Settings'),
             SizedBox(height: 4),
-            CustomListTile(icon: Icons.history, title: 'Order History',
-            onTap: () {
-    Get.toNamed(MyPagesName.orderhistory);
-  },),
+            CustomListTile(
+              icon: Icons.history,
+              title: 'Order History',
+              onTap: () {
+                Get.toNamed(MyPagesName.orderhistory);
+              },
+            ),
             SizedBox(height: 4),
             CustomListTile(icon: Icons.payment, title: 'Payment Method'),
             SizedBox(height: 4),
             CustomListTile(icon: Icons.favorite, title: 'My Favorites'),
             SizedBox(height: 4),
             CustomListTile(
-  icon: Icons.language,
-  title: 'Language',
-  onTap: () {
-    Get.toNamed(MyPagesName.language);
-  },
-),
+              icon: Icons.language,
+              title: 'Language',
+              onTap: () {
+                Get.toNamed(MyPagesName.language);
+              },
+            ),
             SizedBox(height: 4),
             CustomListTile(
               icon: Icons.logout,

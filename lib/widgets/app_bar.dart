@@ -11,9 +11,9 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: AppColors.greenDark, 
-      elevation: 0,
+    
       centerTitle: true,
-      shape:  RoundedRectangleBorder(
+      shape:  RoundedRectangleBorder( 
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(30),
         ),

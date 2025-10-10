@@ -17,22 +17,32 @@ class Order extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(height: 50),
-          Image.asset(MyImages.phoneimg, width: 2000),
+          // Image.asset(MyImages.phoneimg, width: 2000),
+          Container(
+            height: 250,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              // color: Colors.amber,
+              image: DecorationImage(
+                image: AssetImage(MyImages.phoneimg),
+                fit: BoxFit.cover,
+              ),
+
+              // Image.asset(MyImages.phoneimg, fit: BoxFit.contain),
+            ),
+          ),
           SizedBox(height: 30),
           Text(
             "Order Confirmed!",
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 10),
-          SizedBox(
-            width: 300,
-            child: Text(
-              "Your order has been confirmed, we will send you confirmation email shortly.",
-              style: TextStyle(fontSize: 14),
-              textAlign: TextAlign.center,
-              softWrap: true,
-              maxLines: 2,
-            ),
+          Text(
+            "Your order has been confirmed, we will send\n you confirmation email shortly.",
+            style: TextStyle(fontSize: 14),
+             textAlign: TextAlign.center,
+            
+            maxLines: 2,
           ),
           SizedBox(height: 50),
           Padding(

@@ -9,17 +9,18 @@ class Splash3 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return SplashContent(
       imagePath: MyImages.splash4,
       heading: "Let's connect \nwith each other",
       bodyText:
           "Lorem ipsum dolor sit amet, consectetur adipiscing\n elit, sed do eiusmod tempor incididunt ut labore et \ndolore magna aliqua.",
       onSkip: () {
-Get.toNamed(MyPagesName.login);      },
-      onNext: () {
-Get.toNamed(MyPagesName.login);        
+        Get.toNamed(MyPagesName.login);
       },
+      onNext: () {
+        Get.toNamed(MyPagesName.login);
+      },
+      currentPage: 3, // 👈 third dot active
     );
   }
 }

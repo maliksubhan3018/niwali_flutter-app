@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
 import 'package:niwali_app/config/route_name.dart';
-import 'package:niwali_app/widgets/app_bar.dart';
-import 'package:niwali_app/widgets/color_widget.dart';
-import 'package:niwali_app/widgets/custom_button.dart';
-import 'package:niwali_app/widgets/image_widget.dart';
-import 'package:niwali_app/widgets/widget_text_field.dart';
+
+import 'package:niwali_app/widgets/widget_io.dart';
+
 
 class PaymentCard extends StatelessWidget {
   const PaymentCard({super.key});
@@ -45,10 +43,10 @@ class PaymentCard extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16),
                         ),
-                        clipBehavior: Clip.hardEdge,
+                       // clipBehavior: Clip.hardEdge,
                         child: Image.asset(
                           imagePath,
-                          fit: BoxFit.cover,
+                          fit: BoxFit.fill,
                           width: double.infinity,
                         ),
                       );

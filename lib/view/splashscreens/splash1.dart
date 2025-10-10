@@ -15,13 +15,13 @@ class Splash1 extends StatelessWidget {
       bodyText:
           "Lorem ipsum dolor sit amet, consectetur adipiscing\n elit, sed do eiusmod tempor incididunt ut labore et \ndolore magna aliqua.",
       onSkip: () {
-         Get.toNamed(MyPagesName.splash2);
-       // print('Skip pressed');
+        Get.toNamed(MyPagesName.splash2);
       },
       onNext: () {
-         Get.toNamed(MyPagesName.splash2);
-       // print('Next pressed');
+        Get.toNamed(MyPagesName.splash2);
       },
+      // Show custom dots
+      showDots: true,
     );
   }
 }

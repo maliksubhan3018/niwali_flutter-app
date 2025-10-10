@@ -1,4 +1,3 @@
-// lib/widgets/splash_content.dart
 import 'package:flutter/material.dart';
 import 'package:niwali_app/widgets/color_widget.dart';
 
@@ -11,6 +10,7 @@ class SplashContent extends StatelessWidget {
   final bool showDots;
   final bool showSkip;
   final String buttonText;
+  final int? currentPage; // 👈 Added field for active dot
 
   const SplashContent({
     super.key,
@@ -22,12 +22,14 @@ class SplashContent extends StatelessWidget {
     this.showDots = true,
     this.showSkip = true,
     this.buttonText = 'Next',
+    this.currentPage, // 👈 Added to constructor
   });
 
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final containerHeight = screenHeight / 2;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
@@ -53,6 +55,7 @@ class SplashContent extends StatelessWidget {
             ),
           ),
 
+          // Bottom section
           SizedBox(
             height: containerHeight,
             child: Container(
@@ -61,7 +64,7 @@ class SplashContent extends StatelessWidget {
                 color: Color(0xFF1EAB70),
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(50)),
               ),
-              padding: EdgeInsets.all(24.0),
+              padding: const EdgeInsets.all(24.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -72,47 +75,60 @@ class SplashContent extends StatelessWidget {
                     children: [
                       Text(
                         heading,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      SizedBox(height: 12.0),
+                      const SizedBox(height: 12.0),
                       Text(
                         bodyText,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 12.0,
                           color: Colors.white,
                           height: 1.5,
                         ),
                         textAlign: TextAlign.center,
                       ),
+
+                      // 👇 Updated dots (only when showDots = true)
                       if (showDots) ...[
-                        SizedBox(height: 8.0),
+                        const SizedBox(height: 16.0),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.more_horiz,
-                              color: Colors.white54,
-                              size: 20,
-                            ),
-                          ],
+                          children: List.generate(3, (index) {
+                            bool isActive = (index + 1) == currentPage;
+                            return AnimatedContainer(
+                              duration: const Duration(milliseconds: 300),
+                              margin:
+                                  const EdgeInsets.symmetric(horizontal: 4.0),
+                              height: 8,
+                              width: 8,
+                              decoration: BoxDecoration(
+                                color: isActive
+                                    ? Colors.white
+                                    : Colors.grey.shade400,
+                                shape: BoxShape.circle,
+                              ),
+                            );
+                          }),
                         ),
                       ],
                     ],
                   ),
-                  SizedBox(height: 24.0),
 
+                  const SizedBox(height: 24.0),
+
+                  // Buttons
                   if (showSkip) ...[
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         TextButton(
                           onPressed: onSkip,
-                          child: Text(
+                          child: const Text(
                             'Skip',
                             style: TextStyle(
                               color: Colors.white,
@@ -129,14 +145,14 @@ class SplashContent extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8.0),
                             ),
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                               horizontal: 32.0,
                               vertical: 12.0,
                             ),
                           ),
                           child: Text(
                             buttonText,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 16.0,
                               fontWeight: FontWeight.w600,
                             ),
@@ -148,19 +164,19 @@ class SplashContent extends StatelessWidget {
                     ElevatedButton(
                       onPressed: onNext,
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xFF1EAB70),
+                        backgroundColor: const Color(0xFF1EAB70),
                         foregroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8.0),
                         ),
-                        padding: EdgeInsets.symmetric(
+                        padding: const EdgeInsets.symmetric(
                           horizontal: 32.0,
                           vertical: 12.0,
                         ),
                       ),
                       child: Text(
                         buttonText,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16.0,
                           fontWeight: FontWeight.w600,
                         ),
