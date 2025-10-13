@@ -98,9 +98,37 @@ class _HomeState extends State<Home> {
     return Column(
       children: [
         Container(
+          height: 60, // Adjusted height to match app bar style
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Color(0xFF014B34), Color(0xFF2B7B77), Color(0xFF108A00), Color(0xFF1AE906)],
+              stops: [0.0, 0.3686, 0.7802, 1.0],
+            ),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                'assets/project_images/niwali logo (1).png',
+                height: 40,
+              ),
+              const Spacer(),
+              IconButton(
+                icon: const Icon(Icons.shopping_cart, color: Colors.white),
+                onPressed: () {
+                  // Handle cart icon tap
+                },
+              ),
+            ],
+          ),
+        ),
+        Container(
           height: 200,
           width: double.infinity,
-          decoration:  BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(MyImages.banner),
               fit: BoxFit.cover,
@@ -108,11 +136,11 @@ class _HomeState extends State<Home> {
           ),
         ),
         Padding(
-          padding:  EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-               Text(
+              const Text(
                 'All items',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
@@ -121,10 +149,10 @@ class _HomeState extends State<Home> {
                   IconButton(
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
-                         SnackBar(content: Text('Favorites toggled')),
+                        const SnackBar(content: Text('Favorites toggled')),
                       );
                     },
-                    icon:  Icon(
+                    icon: const Icon(
                       Icons.favorite_border,
                       color: AppColors.greenDark,
                     ),
@@ -151,10 +179,10 @@ class _HomeState extends State<Home> {
         Expanded(
           child: isGridView
               ? GridView.builder(
-                  padding:  EdgeInsets.symmetric(horizontal: 8),
-                  gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: 0.7,
+                    childAspectRatio: 0.74,
                     crossAxisSpacing: 8,
                     mainAxisSpacing: 8,
                   ),
@@ -171,7 +199,7 @@ class _HomeState extends State<Home> {
                   },
                 )
               : ListView.builder(
-                  padding:  EdgeInsets.symmetric(horizontal: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
                   itemCount: items.length,
                   itemBuilder: (context, index) {
                     final item = items[index];
@@ -192,11 +220,11 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarWidget(title: _getTitleFromIndex()),
+      appBar: _currentIndex == 0 ? null : AppBarWidget(title: _getTitleFromIndex()),
       body: IndexedStack(
         index: _currentIndex,
         children: [
-         buildHomeBody(),
+          buildHomeBody(),
           const Cart(),
           const Notifications(),
           const Profile(),

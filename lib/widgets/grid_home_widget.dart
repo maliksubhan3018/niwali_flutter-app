@@ -28,18 +28,12 @@ class GridHomeWidget extends StatelessWidget {
         Get.toNamed(MyPagesName.product);
       },
       child: Container(
-        padding: EdgeInsets.all(12),
+        padding: EdgeInsets.fromLTRB(8, 8, 8, 0),
+        clipBehavior: Clip.antiAlias, 
         decoration: BoxDecoration(
           color: AppColors.greenLight,
           borderRadius: BorderRadius.circular(12),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.1),
-              spreadRadius: 1,
-              blurRadius: 4,
-              offset: Offset(0, 2),
-            ),
-          ],
+          
         ),
         child: Stack(
           clipBehavior: Clip.none,
@@ -100,10 +94,11 @@ class GridHomeWidget extends StatelessWidget {
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                       ),
-                      SizedBox(height: 4),
+                      SizedBox(height: 9),
                       Text(
                         price,
                         style: TextStyle(
+                          
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
                           color: Colors.white,
@@ -115,11 +110,11 @@ class GridHomeWidget extends StatelessWidget {
               ],
             ),
             Positioned(
-              bottom: -12,
+              bottom: 0,
               right: -12,
               child: Container(
-                width: 40,
-                height: 40,
+                width: 35,
+                height: 27,
                 decoration: BoxDecoration(
                   color: AppColors.greenDark,
                   borderRadius: BorderRadius.only(
@@ -145,7 +140,7 @@ class GridHomeWidget extends StatelessWidget {
                           ),
                         ),
                       )
-                    : Icon(Icons.shopping_bag, color: Colors.white, size: 20),
+                    : Icon(Icons.shopping_bag, color: Colors.white, size: 15),
               ),
             ),
           ],
