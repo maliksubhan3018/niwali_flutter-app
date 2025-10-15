@@ -10,8 +10,15 @@ class OrderHistory extends StatelessWidget {
       context: context,
       builder: (context) => AlertDialog(
         backgroundColor: Colors.white,
-        // ignore: avoid_unnecessary_containers
-        content: Container(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+          side: BorderSide(color: AppColors.greenDark),
+        ),
+        // remove AlertDialog's internal default padding
+        contentPadding: EdgeInsets.all(8),
+
+        content: Padding(
+          padding: const EdgeInsets.all(8),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,12 +28,12 @@ class OrderHistory extends StatelessWidget {
                 children: [
                   Text(
                     "Order #21453",
-                    style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue,
+                    ),
                   ),
-                  Text(
-                    "Jan 10, 2019",
-                    style: TextStyle(fontSize: 14),
-                  ),
+                  Text("Jan 10, 2019", style: TextStyle(fontSize: 12)),
                 ],
               ),
               SizedBox(height: 8),
@@ -34,15 +41,14 @@ class OrderHistory extends StatelessWidget {
                 children: [
                   Icon(Icons.local_shipping, color: Colors.blue),
                   SizedBox(width: 4),
-                  Text(
-                    "Shipped",
-                    style: TextStyle(color: Colors.blue),
-                  ),
+                  Text("Shipped", style: TextStyle(color: Colors.blue)),
                 ],
               ),
               SizedBox(height: 16),
               _buildItemRow("Strandmond", "2 pcs", "\$295.63"),
+              Divider(),
               _buildItemRow("Mellyby", "1 pcs", "\$465.23"),
+              Divider(),
               _buildItemRow("Maisa", "1 pcs", "\$162.43"),
               SizedBox(height: 16),
               Row(
@@ -50,11 +56,11 @@ class OrderHistory extends StatelessWidget {
                 children: [
                   Text(
                     "© 7309 Hudson, Los Angeles",
-                    style: TextStyle(fontSize: 12, color: Colors.grey),
+                    style: TextStyle(fontSize: 8, color: Colors.grey),
                   ),
                   Text(
                     "Total \$924.52",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
                   ),
                 ],
               ),
@@ -73,14 +79,10 @@ class OrderHistory extends StatelessWidget {
 
   Widget _buildItemRow(String item, String qty, String price) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 4),
+      padding: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(item),
-          Text(qty),
-          Text(price),
-        ],
+        children: [Text(item), Text(qty), Text(price)],
       ),
     );
   }
@@ -91,24 +93,25 @@ class OrderHistory extends StatelessWidget {
       appBar: AppBarWidget(title: "Order History"),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          children: [
-            GestureDetector(
-              onTap: () => _showOrderDetails(context),
-              child: OrderCard(
-                orderId: "Order #21453",
-                date: "Jan 10, 2019",
-                items: "Items 3",
-                price: "Total \$924.52",
-                status: "Shipped",
-                statusColor: Colors.green,
-                transactionId: "T. ID: N/A",
+        padding: EdgeInsets.all(12),
+        child: SafeArea(
+          child: Column(
+            children: [
+              GestureDetector(
+                onTap: () => _showOrderDetails(context),
+                child: OrderCard(
+                  orderId: "Order #21453",
+                  date: "Jan 10, 2019",
+                  items: "Items 3",
+                  price: "Total \$924.52",
+                  status: "Shipped",
+                  statusColor: Colors.green,
+                  transactionId: "T. ID: N/A",
+                ),
               ),
-            ),
-            SizedBox(height: 12),
-            // Add other OrderCards as needed
-          ],
+              SizedBox(height: 12),
+            ],
+          ),
         ),
       ),
     );
@@ -138,7 +141,7 @@ class OrderCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(12),
+      padding: EdgeInsets.all(6),
       decoration: BoxDecoration(
         color: AppColors.greenLight,
         borderRadius: BorderRadius.circular(8),

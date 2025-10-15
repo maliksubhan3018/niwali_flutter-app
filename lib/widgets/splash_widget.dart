@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:niwali_app/widgets/custom_button.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:niwali_app/widgets/color_widget.dart';
 
-class SplashContent extends StatelessWidget {
+class OnboardingContent extends StatelessWidget {
   final String imagePath;
   final String heading;
   final String bodyText;
@@ -10,9 +12,10 @@ class SplashContent extends StatelessWidget {
   final bool showDots;
   final bool showSkip;
   final String buttonText;
-  final int? currentPage; // 👈 Added field for active dot
+  final int? currentPage;
+  final PageController pageController;
 
-  const SplashContent({
+  const OnboardingContent({
     super.key,
     required this.imagePath,
     required this.heading,
@@ -22,13 +25,16 @@ class SplashContent extends StatelessWidget {
     this.showDots = true,
     this.showSkip = true,
     this.buttonText = 'Next',
-    this.currentPage, // 👈 Added to constructor
+    this.currentPage,
+    required this.pageController,
   });
 
   @override
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final containerHeight = screenHeight / 2;
+
+   // int relativeIndex = (currentPage != null && currentPage! > 1) ? currentPage! - 2 : 0;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -54,14 +60,12 @@ class SplashContent extends StatelessWidget {
               ),
             ),
           ),
-
-          // Bottom section
           SizedBox(
             height: containerHeight,
             child: Container(
               width: double.infinity,
               decoration: const BoxDecoration(
-                color: Color(0xFF1EAB70),
+                color: AppColors.greenLight,
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(50)),
               ),
               padding: const EdgeInsets.all(24.0),
@@ -92,36 +96,23 @@ class SplashContent extends StatelessWidget {
                         ),
                         textAlign: TextAlign.center,
                       ),
-
-                      // 👇 Updated dots (only when showDots = true)
                       if (showDots) ...[
                         const SizedBox(height: 16.0),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: List.generate(3, (index) {
-                            bool isActive = (index + 1) == currentPage;
-                            return AnimatedContainer(
-                              duration: const Duration(milliseconds: 300),
-                              margin:
-                                  const EdgeInsets.symmetric(horizontal: 4.0),
-                              height: 8,
-                              width: 8,
-                              decoration: BoxDecoration(
-                                color: isActive
-                                    ? Colors.white
-                                    : Colors.grey.shade400,
-                                shape: BoxShape.circle,
-                              ),
-                            );
-                          }),
+                        SmoothPageIndicator(
+                          controller: pageController,
+                          count: 3,
+                          effect: WormEffect(
+                            dotHeight: 8,
+                            dotWidth: 8,
+                            activeDotColor: Colors.white,
+                            dotColor: Colors.grey.shade400,
+                            spacing: 8,
+                          ),
                         ),
                       ],
                     ],
                   ),
-
                   const SizedBox(height: 24.0),
-
-                  // Buttons
                   if (showSkip) ...[
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -137,50 +128,22 @@ class SplashContent extends StatelessWidget {
                             ),
                           ),
                         ),
-                        ElevatedButton(
+                        CustomButton(
+                          text: buttonText,
                           onPressed: onNext,
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: AppColors.greenDark,
-                            foregroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8.0),
-                            ),
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 32.0,
-                              vertical: 12.0,
-                            ),
-                          ),
-                          child: Text(
-                            buttonText,
-                            style: const TextStyle(
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
+                          isPrimary: true,
+                          wsize: 120,
+                          radious: 20,
                         ),
                       ],
                     ),
                   ] else ...[
-                    ElevatedButton(
+                    CustomButton(
+                      text: buttonText,
                       onPressed: onNext,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF1EAB70),
-                        foregroundColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8.0),
-                        ),
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 32.0,
-                          vertical: 12.0,
-                        ),
-                      ),
-                      child: Text(
-                        buttonText,
-                        style: const TextStyle(
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
+                      isPrimary: true,
+                      wsize: 120,
+                      radious: 20, 
                     ),
                   ],
                 ],

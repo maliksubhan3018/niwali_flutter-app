@@ -3,11 +3,10 @@ import 'package:niwali_app/view/homescreens/cart.dart';
 import 'package:niwali_app/view/homescreens/custom_bottom_navbar.dart';
 import 'package:niwali_app/view/homescreens/notifications.dart';
 import 'package:niwali_app/view/homescreens/profile.dart';
-import 'package:niwali_app/widgets/app_bar.dart';
-import 'package:niwali_app/widgets/color_widget.dart';
-import 'package:niwali_app/widgets/image_widget.dart';
-import 'package:niwali_app/widgets/list_home_widget.dart';
-import 'package:niwali_app/widgets/grid_home_widget.dart';
+//import 'package:niwali_app/widgets/app_bar.dart';
+
+import 'package:niwali_app/widgets/widget_io.dart';
+
 
 class Home extends StatefulWidget {
   const Home({super.key});
