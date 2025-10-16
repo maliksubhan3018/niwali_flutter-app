@@ -4,7 +4,6 @@ import 'package:niwali_app/config/route_name.dart';
 import 'package:niwali_app/widgets/image_widget.dart';
 import 'package:niwali_app/widgets/splash_widget.dart';
 
-
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
 
@@ -18,34 +17,43 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   int _currentPage = 0;
 
   final List<Map<String, dynamic>> _onboardingData = [
+    //splash1 index 0,
     {
       'imagePath': MyImages.splash1,
       'heading': "Let’s connect \n with each other",
-      'bodyText': "Lorem ipsum dolor sit amet, consectetur adipiscing\n elit, sed do eiusmod tempor magna aliqua. Ut labore et\n dolore magna aliqua.",
+      'bodyText':
+          "Lorem ipsum dolor sit amet, consectetur adipiscing\n elit, sed do eiusmod tempor magna aliqua. Ut labore et\n dolore magna aliqua.",
       'showDots': false,
       'showSkip': false,
       'buttonText': 'Start →',
     },
+
+    //splash2 index1
     {
       'imagePath': MyImages.splash2,
       'heading': "Let's connect \nwith each other",
-      'bodyText': "Lorem ipsum dolor sit amet, consectetur adipiscing\n elit, sed do eiusmod tempor incididunt ut labore et \ndolore magna aliqua.",
+      'bodyText':
+          "Lorem ipsum dolor sit amet, consectetur adipiscing\n elit, sed do eiusmod tempor incididunt ut labore et \ndolore magna aliqua.",
       'showDots': true,
       'showSkip': true,
       'buttonText': 'Next',
     },
+    // splash3 index2 2
     {
       'imagePath': MyImages.splash3,
       'heading': "Let's connect \nwith each other",
-      'bodyText': "Lorem ipsum dolor sit amet, consectetur adipiscing\n elit, sed do eiusmod tempor incididunt ut labore et \ndolore magna aliqua.",
+      'bodyText':
+          "Lorem ipsum dolor sit amet, consectetur adipiscing\n elit, sed do eiusmod tempor incididunt ut labore et \ndolore magna aliqua.",
       'showDots': true,
       'showSkip': true,
       'buttonText': 'Next',
     },
+    // splash 4 index 3
     {
       'imagePath': MyImages.splash4,
       'heading': "Let's connect \nwith each other",
-      'bodyText': "Lorem ipsum dolor sit amet, consectetur adipiscing\n elit, sed do eiusmod tempor incididunt ut labore et \ndolore magna aliqua.",
+      'bodyText':
+          "Lorem ipsum dolor sit amet, consectetur adipiscing\n elit, sed do eiusmod tempor incididunt ut labore et \ndolore magna aliqua.",
       'showDots': true,
       'showSkip': true,
       'buttonText': 'Next',
@@ -54,18 +62,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   VoidCallback getOnNext(int index) {
     if (index == _onboardingData.length - 1) {
-      return () => Get.toNamed(MyPagesName.login);
+      return () => Get.offAllNamed(MyPagesName.login);
     } else {
-      return () => _pageController.nextPage(duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
+      return () => _pageController.nextPage(
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
     }
   }
 
   VoidCallback? getOnSkip(int index) {
-    if (index < _onboardingData.length - 1) {
-      return () => _pageController.animateToPage(_onboardingData.length - 1, duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
-    } else {
-      return () => Get.toNamed(MyPagesName.login);
-    }
+   // Get.offAllNamed(MyPagesName.login);
+    return null;
   }
 
   @override

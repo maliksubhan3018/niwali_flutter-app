@@ -33,18 +33,21 @@ class OnboardingContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenHeight = MediaQuery.of(context).size.height;
     final containerHeight = screenHeight / 2;
-
+ final offsetPageController = PageController(
+      initialPage: (pageController.page?.toInt() ?? 0) -0,
+      viewportFraction: pageController.viewportFraction,
+    );
    // int relativeIndex = (currentPage != null && currentPage! > 1) ? currentPage! - 2 : 0;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.white,                     
       body: Column(
         children: [
           SizedBox(
             height: containerHeight,
             child: Container(
               width: double.infinity,
-              decoration: const BoxDecoration(
+              decoration:  BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   bottomRight: Radius.circular(30.0),
@@ -64,11 +67,11 @@ class OnboardingContent extends StatelessWidget {
             height: containerHeight,
             child: Container(
               width: double.infinity,
-              decoration: const BoxDecoration(
+              decoration:  BoxDecoration(
                 color: AppColors.greenLight,
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(50)),
               ),
-              padding: const EdgeInsets.all(24.0),
+              padding:  EdgeInsets.all(24),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -79,14 +82,14 @@ class OnboardingContent extends StatelessWidget {
                     children: [
                       Text(
                         heading,
-                        style: const TextStyle(
+                        style:  TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
                         textAlign: TextAlign.center,
                       ),
-                      const SizedBox(height: 12.0),
+                       SizedBox(height: 12),
                       Text(
                         bodyText,
                         style: const TextStyle(
@@ -99,9 +102,9 @@ class OnboardingContent extends StatelessWidget {
                       if (showDots) ...[
                         const SizedBox(height: 16.0),
                         SmoothPageIndicator(
-                          controller: pageController,
+                          controller: offsetPageController ,
                           count: 3,
-                          effect: WormEffect(
+                          effect:WormEffect(
                             dotHeight: 8,
                             dotWidth: 8,
                             activeDotColor: Colors.white,
@@ -112,7 +115,7 @@ class OnboardingContent extends StatelessWidget {
                       ],
                     ],
                   ),
-                  const SizedBox(height: 24.0),
+                   SizedBox(height: 24),
                   if (showSkip) ...[
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -131,7 +134,7 @@ class OnboardingContent extends StatelessWidget {
                         CustomButton(
                           text: buttonText,
                           onPressed: onNext,
-                          isPrimary: true,
+                          //isPrimary: true,
                           wsize: 120,
                           radious: 20,
                         ),
@@ -141,7 +144,7 @@ class OnboardingContent extends StatelessWidget {
                     CustomButton(
                       text: buttonText,
                       onPressed: onNext,
-                      isPrimary: true,
+                     // isPrimary: true,
                       wsize: 120,
                       radious: 20, 
                     ),

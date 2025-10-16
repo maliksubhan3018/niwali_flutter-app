@@ -14,7 +14,6 @@ class OrderHistory extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           side: BorderSide(color: AppColors.greenDark),
         ),
-        // remove AlertDialog's internal default padding
         contentPadding: EdgeInsets.all(8),
 
         content: Padding(
