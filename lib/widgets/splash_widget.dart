@@ -134,7 +134,6 @@ class OnboardingContent extends StatelessWidget {
                         CustomButton(
                           text: buttonText,
                           onPressed: onNext,
-                          //isPrimary: true,
                           wsize: 120,
                           radious: 20,
                         ),
@@ -144,7 +143,6 @@ class OnboardingContent extends StatelessWidget {
                     CustomButton(
                       text: buttonText,
                       onPressed: onNext,
-                     // isPrimary: true,
                       wsize: 120,
                       radious: 20, 
                     ),
